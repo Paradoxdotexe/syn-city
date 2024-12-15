@@ -29,7 +29,11 @@
   }
 
   .playingCard__bg.bg--overlay {
-    opacity: 5%;
+    opacity: 10%;
+  }
+
+  .playingCard__bg.bg--glare {
+    z-index: 1;
   }
 
   .playingCard__header {
