@@ -3,7 +3,7 @@
   height: 561px;
   box-sizing: border-box;
   background: black;
-  border-radius: 8px;
+  border-radius: 16px;
   font-family: "Oxanium", sans-serif;
   padding: 16px;
   position: relative;
@@ -12,6 +12,12 @@
   flex-direction: column;
   overflow: hidden;
   gap: 8px;
+  transition: transform 150ms ease;
+  cursor: pointer;
+
+  &.playingCard--hoverable:hover {
+    transform: scale(1.02) translateY(-20px);
+  }
 
   .playingCard__bg {
     position: absolute;
@@ -29,7 +35,7 @@
   }
 
   .playingCard__bg.bg--overlay {
-    opacity: 10%;
+    opacity: 5%;
   }
 
   .playingCard__bg.bg--glare {
@@ -49,8 +55,7 @@
       border-radius: 15px;
 
       svg {
-        width: 20px;
-        height: 20px;
+        font-size: 20px;
       }
     }
 
