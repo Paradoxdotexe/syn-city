@@ -1,0 +1,8 @@
+.cardHand {
+  .cardHand__cardContainer {
+    &:hover {
+      z-index: 10;
+      transition: all 150ms ease;
+    }
+  }
+}

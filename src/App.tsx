@@ -1,8 +1,7 @@
 import React from "react";
 import "./App.css";
-import { PlayingCard } from "./PlayingCard";
-import { InteractiveElement } from "./InteractiveElement";
 import { SYN_CITY_CARDS } from "./sync-city-cards";
+import { CardHand } from "./CardHand";
 
 function App() {
   return (
@@ -15,9 +14,7 @@ function App() {
         gap: 32,
       }}
     >
-      <InteractiveElement id="Auxiliary Power">
-        <PlayingCard card={SYN_CITY_CARDS[0]} />
-      </InteractiveElement>
+      <CardHand cards={SYN_CITY_CARDS} />
     </div>
   );
 }

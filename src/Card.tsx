@@ -1,5 +1,5 @@
 import React from "react";
-import "./PlayingCard.css";
+import "./Card.css";
 import { ReactComponent as HeartIcon } from "./icons/Heart.svg";
 import { ReactComponent as BrainIcon } from "./icons/Brain.svg";
 import { ReactComponent as BoltIcon } from "./icons/Bolt.svg";
@@ -53,32 +53,31 @@ const ATTRIBUTE_TYPE_ICONS: {
   core: HeartIcon,
 };
 
-type PlayingCardProps = {
+type CardProps = {
   card: SynCityCard;
-  hoverable?: boolean;
+  style?: React.CSSProperties;
 };
 
-export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
+export const Card: React.FC<CardProps> = (props) => {
   const attributeType = ATTRIBUTE_TYPES[props.card.attributeKey];
   const attributeTypeColor = ATTRIBUTE_TYPE_COLORS[attributeType];
   const AttributeTypeIcon = ATTRIBUTE_TYPE_ICONS[attributeType];
 
   return (
     <div
-      className={`playingCard ${
-        props.hoverable ? "playingCard--hoverable" : ""
-      }`}
+      className="card"
       style={{
         color: attributeTypeColor,
+        ...props.style,
       }}
     >
-      <div className="playingCard__bg bg--image" />
+      <div className="card__bg bg--image" />
       <div
-        className="playingCard__bg bg--overlay"
+        className="card__bg bg--overlay"
         style={{ background: attributeTypeColor }}
       />
 
-      <div className="playingCard__header">
+      <div className="card__header">
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <div
             className="header__attributeType"
@@ -114,7 +113,7 @@ export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
         </div>
       </div>
 
-      <div className="playingCard__image">
+      <div className="card__image">
         <ImageBorder style={{ fill: attributeTypeColor }} />
         <ImageGrid className="image__grid" />
       </div>
@@ -126,21 +125,18 @@ export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
           justifyContent: "space-between",
         }}
       >
-        <div className="playingCard__name">{props.card.name}</div>
-        <div className="playingCard__actionType">[{props.card.actionType}]</div>
+        <div className="card__name">{props.card.name}</div>
+        <div className="card__actionType">[{props.card.actionType}]</div>
       </div>
 
       <div
-        className="playingCard__description"
+        className="card__description"
         dangerouslySetInnerHTML={{
           __html: parse(props.card.description) as string,
         }}
       />
 
-      <div
-        className="playingCard__footer"
-        style={{ background: attributeTypeColor }}
-      >
+      <div className="card__footer" style={{ background: attributeTypeColor }}>
         <div>SynCityGame.com</div>
         <div>Copyright © 2025 Syn City</div>
       </div>

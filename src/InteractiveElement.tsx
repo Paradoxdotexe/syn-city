@@ -9,30 +9,18 @@ type InteractiveElementProps = {
 export const InteractiveElement: React.FC<InteractiveElementProps> = (
   props
 ) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [hoverWeight, setHoverWeight] = useState<{ x: number; y: number }>();
   const [glarePoint, setGlarePoint] = useState<{ x: number; y: number }>();
-  const [centerPoint, setCenterPoint] = useState<{ x: number; y: number }>();
 
   const intensity = props.intensity ?? 10;
 
   useEffect(() => {
     const element = document.getElementById(props.id);
-    const elementBox = element!.getBoundingClientRect();
-
-    if (!centerPoint) {
-      setCenterPoint({
-        x: elementBox.left + elementBox.width / 2,
-        y: elementBox.top + elementBox.height / 2,
-      });
-    }
 
     const onMouseMove = (event: any) => {
-      if (
-        event.clientX > elementBox.left &&
-        event.clientX < elementBox.right &&
-        event.clientY > elementBox.top &&
-        event.clientY < elementBox.bottom
-      ) {
+      if (isHovered) {
+        const elementBox = element!.getBoundingClientRect();
         const xRatio = (event.clientX - elementBox.left) / elementBox.width;
         const yRatio = (event.clientY - elementBox.top) / elementBox.height;
         setHoverWeight({ x: (xRatio - 0.5) * 2, y: (0.5 - yRatio) * 2 });
@@ -46,27 +34,31 @@ export const InteractiveElement: React.FC<InteractiveElementProps> = (
     window.addEventListener("mousemove", onMouseMove);
 
     return () => window.removeEventListener("mousemove", onMouseMove);
-  }, []);
+  }, [isHovered]);
 
   return (
     <div
-      id={props.id}
       style={{
         position: "relative",
         perspective: 800,
         perspectiveOrigin: "center center",
-        padding: 16,
         width: "fit-content",
       }}
     >
       <div
+        id={props.id}
         style={{
           transform: hoverWeight
-            ? `scale(1.1) rotateY(${hoverWeight.x * intensity}deg) rotateX(${
+            ? `rotateY(${hoverWeight.x * intensity}deg) rotateX(${
                 hoverWeight.y * intensity
               }deg)`
-            : "scale(1) rotateY(0) rotateX(0)",
-          transition: !hoverWeight ? "transform 150ms ease" : undefined,
+            : "rotateY(0) rotateX(0)",
+        }}
+        onMouseEnter={() => {
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
         }}
       >
         <div

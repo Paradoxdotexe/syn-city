@@ -1,4 +1,4 @@
-.playingCard {
+.card {
   width: 411px;
   height: 561px;
   box-sizing: border-box;
@@ -14,12 +14,9 @@
   gap: 8px;
   transition: transform 150ms ease;
   cursor: pointer;
+  user-select: none;
 
-  &.playingCard--hoverable:hover {
-    transform: scale(1.02) translateY(-20px);
-  }
-
-  .playingCard__bg {
+  .card__bg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -28,21 +25,21 @@
     z-index: -1;
   }
 
-  .playingCard__bg.bg--image {
+  .card__bg.bg--image {
     background-image: url("./images/playing-card-bg.png");
     background-size: contain;
     opacity: 20%;
   }
 
-  .playingCard__bg.bg--overlay {
+  .card__bg.bg--overlay {
     opacity: 5%;
   }
 
-  .playingCard__bg.bg--glare {
+  .card__bg.bg--glare {
     z-index: 1;
   }
 
-  .playingCard__header {
+  .card__header {
     display: flex;
     justify-content: space-between;
 
@@ -95,7 +92,7 @@
     }
   }
 
-  .playingCard__image {
+  .card__image {
     position: relative;
     margin-bottom: 8px;
 
@@ -111,18 +108,18 @@
     }
   }
 
-  .playingCard__name {
+  .card__name {
     font-size: 24px;
     font-weight: 600;
   }
 
-  .playingCard__actionType {
+  .card__actionType {
     color: white;
     opacity: 0.5;
     text-transform: uppercase;
   }
 
-  .playingCard__description {
+  .card__description {
     p {
       margin: 0;
       line-height: 140%;
@@ -133,7 +130,7 @@
     }
   }
 
-  .playingCard__footer {
+  .card__footer {
     display: flex;
     justify-content: space-between;
     color: black;
