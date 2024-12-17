@@ -59,6 +59,12 @@
       }
     }
 
+    .header__actionCost {
+      font-size: 24px;
+      font-weight: 600;
+      padding-top: 2px;
+    }
+
     .header__attribute {
       display: flex;
       align-items: center;
@@ -106,13 +112,14 @@
   }
 
   .playingCard__name {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
   }
 
-  .playingCard__action {
+  .playingCard__actionType {
     color: white;
     opacity: 0.5;
+    text-transform: uppercase;
   }
 
   .playingCard__description {

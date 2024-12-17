@@ -7,7 +7,9 @@ import { ReactComponent as ImageBorder } from "./icons/ImageBorder.svg";
 import { ReactComponent as ImageGrid } from "./icons/ImageGrid.svg";
 import { parse } from "marked";
 
-type AttributeKey =
+type CardActionType = "activation" | "reaction" | "effect";
+
+type CardAttributeKey =
   | "power"
   | "precision"
   | "protocol"
@@ -15,9 +17,18 @@ type AttributeKey =
   | "preservation"
   | "perception";
 
-type AttributeType = "kinetic" | "neural" | "core";
+type CardAttributeType = "kinetic" | "neural" | "core";
 
-const ATTRIBUTE_TYPES: { [key in AttributeKey]: AttributeType } = {
+export type SynCityCard = {
+  actionType: CardActionType;
+  actionCost: number;
+  attributeKey: CardAttributeKey;
+  attributeCost: number;
+  name: string;
+  description: string;
+};
+
+const ATTRIBUTE_TYPES: { [key in CardAttributeKey]: CardAttributeType } = {
   power: "kinetic",
   precision: "kinetic",
   protocol: "neural",
@@ -26,14 +37,14 @@ const ATTRIBUTE_TYPES: { [key in AttributeKey]: AttributeType } = {
   perception: "core",
 };
 
-const ATTRIBUTE_TYPE_COLORS: { [key in AttributeType]: string } = {
+const ATTRIBUTE_TYPE_COLORS: { [key in CardAttributeType]: string } = {
   kinetic: "#CA84FF",
   neural: "#D4FF6F",
   core: "#3EFDD7",
 };
 
 const ATTRIBUTE_TYPE_ICONS: {
-  [key in AttributeType]: React.FunctionComponent<
+  [key in CardAttributeType]: React.FunctionComponent<
     React.SVGAttributes<SVGElement>
   >;
 } = {
@@ -43,18 +54,12 @@ const ATTRIBUTE_TYPE_ICONS: {
 };
 
 type PlayingCardProps = {
-  attribute: {
-    key: AttributeKey;
-    cost: number;
-  };
-  name: string;
-  description: string;
-  action: "ACTIVATE" | "CONSUME";
+  card: SynCityCard;
   hoverable?: boolean;
 };
 
 export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
-  const attributeType = ATTRIBUTE_TYPES[props.attribute.key];
+  const attributeType = ATTRIBUTE_TYPES[props.card.attributeKey];
   const attributeTypeColor = ATTRIBUTE_TYPE_COLORS[attributeType];
   const AttributeTypeIcon = ATTRIBUTE_TYPE_ICONS[attributeType];
 
@@ -74,16 +79,24 @@ export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
       />
 
       <div className="playingCard__header">
-        <div
-          className="header__attributeType"
-          style={{ background: attributeTypeColor }}
-        >
-          <AttributeTypeIcon />
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <div
+            className="header__attributeType"
+            style={{ background: attributeTypeColor }}
+          >
+            <AttributeTypeIcon />
+          </div>
+          <div
+            className="header__actionCost"
+            style={{ color: attributeTypeColor }}
+          >
+            {props.card.actionCost}
+          </div>
         </div>
 
         <div className="header__attribute">
-          <div className="attribute__name">{props.attribute.key}</div>
-          {props.attribute.cost > 8 && (
+          <div className="attribute__name">{props.card.attributeKey}</div>
+          {props.card.attributeCost > 8 && (
             <div
               className="attribute__cost"
               style={{ background: attributeTypeColor }}
@@ -94,7 +107,7 @@ export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
             style={{ background: attributeTypeColor }}
           >
             {[...new Array(8)].map((_, i) => {
-              const bit = props.attribute.cost % 8;
+              const bit = props.card.attributeCost % 8;
               return <div>{i < bit || bit === 0 ? "1" : "0"}</div>;
             })}
           </div>
@@ -113,14 +126,14 @@ export const PlayingCard: React.FC<PlayingCardProps> = (props) => {
           justifyContent: "space-between",
         }}
       >
-        <div className="playingCard__name">{props.name}</div>
-        <div className="playingCard__action">[{props.action}]</div>
+        <div className="playingCard__name">{props.card.name}</div>
+        <div className="playingCard__actionType">[{props.card.actionType}]</div>
       </div>
 
       <div
         className="playingCard__description"
         dangerouslySetInnerHTML={{
-          __html: parse(props.description) as string,
+          __html: parse(props.card.description) as string,
         }}
       />
 
