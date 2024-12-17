@@ -27,10 +27,9 @@ export const CardHand: React.FC<CardHandProps> = (props) => {
           <div
             className="cardHand__cardContainer"
             style={{
-              position: "absolute",
               marginLeft: relativeIndex * 350,
               marginTop: Math.pow(Math.abs(relativeIndex), 1.6) * 25,
-              transform: `scale(${isHovered ? 1.25 : 1})rotateZ(${
+              transform: `scale(${isHovered ? 1.25 : 1}) rotateZ(${
                 relativeIndex * (hoverIndex === i ? 1.5 : 3)
               }deg)`,
             }}
