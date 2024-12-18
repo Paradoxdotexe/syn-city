@@ -1,16 +1,16 @@
 import React from "react";
 import "./Card.css";
 import { ReactComponent as BrainIcon } from "./icons/Brain.svg";
-import { ReactComponent as HeartIcon } from "./icons/Heart.svg";
+import { ReactComponent as ChipIcon } from "./icons/Chip.svg";
 import { ReactComponent as ShieldIcon } from "./icons/Shield.svg";
-import { ReactComponent as EyeIcon } from "./icons/Eye.svg";
+import { ReactComponent as EyeIcon } from "./icons/Rocket.svg";
 import { ReactComponent as FistIcon } from "./icons/Fist.svg";
 import { ReactComponent as CrosshairIcon } from "./icons/Crosshair.svg";
 import { ReactComponent as ImageBorder } from "./icons/ImageBorder.svg";
 import { ReactComponent as ImageGrid } from "./icons/ImageGrid.svg";
 import { parse } from "marked";
 
-type CardActionType = "activation" | "reaction" | "effect";
+type CardActionType = "activate" | "condition" | "effect";
 
 type CardAttributeKey =
   | "power"
@@ -18,7 +18,7 @@ type CardAttributeKey =
   | "protocol"
   | "persona"
   | "plating"
-  | "perception";
+  | "propulsion";
 
 export type SynCityCard = {
   actionType: CardActionType;
@@ -39,7 +39,7 @@ const ATTRIBUTE_COLORS: { [key in CardAttributeKey]: string } = {
   protocol: NEURAL_COLOR,
   persona: NEURAL_COLOR,
   plating: CORE_COLOR,
-  perception: CORE_COLOR,
+  propulsion: CORE_COLOR,
 };
 
 const ATTRIBUTE_ICONS: {
@@ -49,10 +49,10 @@ const ATTRIBUTE_ICONS: {
 } = {
   power: FistIcon,
   precision: CrosshairIcon,
-  protocol: BrainIcon,
-  persona: HeartIcon,
+  protocol: ChipIcon,
+  persona: BrainIcon,
   plating: ShieldIcon,
-  perception: EyeIcon,
+  propulsion: EyeIcon,
 };
 
 type CardProps = {
