@@ -57,9 +57,16 @@
     }
 
     .header__actionCost {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 24px;
       font-weight: 600;
       padding-top: 2px;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      color: black;
     }
 
     .header__attribute {
