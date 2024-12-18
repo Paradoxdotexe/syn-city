@@ -12,7 +12,7 @@
   flex-direction: column;
   overflow: hidden;
   gap: 8px;
-  transition: transform 150ms ease;
+  transition: all 200ms ease;
   cursor: pointer;
   user-select: none;
 

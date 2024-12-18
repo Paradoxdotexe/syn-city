@@ -22,13 +22,18 @@ export const CardHand: React.FC<CardHandProps> = (props) => {
       {props.cards.map((card, i) => {
         const relativeIndex = getRelativeIndex(i);
         const isHovered = hoverIndex === i;
+        const isHoveredAdjacent =
+          !!hoverIndex && Math.abs(hoverIndex - i) === 1;
 
         return (
           <div
             className="cardHand__cardContainer"
             style={{
-              marginLeft: relativeIndex * 350,
-              marginTop: Math.pow(Math.abs(relativeIndex), 1.6) * 25,
+              marginLeft:
+                relativeIndex * 325 +
+                (isHoveredAdjacent ? (i - hoverIndex) * 25 : 0),
+              marginTop:
+                Math.pow(Math.abs(relativeIndex), isHovered ? 1 : 1.6) * 25,
               transform: `scale(${isHovered ? 1.25 : 1}) rotateZ(${
                 relativeIndex * (hoverIndex === i ? 1.5 : 3)
               }deg)`,

@@ -1,7 +1,7 @@
 .cardHand {
   .cardHand__cardContainer {
     position: absolute;
-    transition: all 150ms ease;
+    transition: all 200ms ease;
 
     &:hover {
       z-index: 10;
