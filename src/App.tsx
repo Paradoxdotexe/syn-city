@@ -29,7 +29,7 @@ function App() {
   //       gap: 32,
   //     }}
   //   >
-  //     <CardHand cards={SYN_CITY_CARDS.slice(-3)} />
+  //     <CardHand cards={SYN_CITY_CARDS.slice(0, 5)} />
   //   </div>
   // );
 }

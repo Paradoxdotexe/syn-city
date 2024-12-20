@@ -82,7 +82,6 @@
       .attribute__cost {
         display: flex;
         align-items: center;
-        gap: 2px;
         color: black;
         padding-inline: 10px;
         clip-path: polygon(
@@ -95,6 +94,10 @@
         );
         height: 20px;
         padding-top: 2px;
+
+        > div {
+          padding-inline: 1px;
+        }
       }
     }
   }

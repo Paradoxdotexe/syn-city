@@ -31,7 +31,7 @@ export const SYN_CITY_CARDS: SynCityCard[] = [
     attributeKey: "persona",
     attributeCost: 1,
     name: "Support",
-    description: "When an ally attacks, add **2 damage**.",
+    description: "When an ally at **CLOSE** range  attacks... add **2 damage**.",
   },
   {
     actionType: "condition",
@@ -39,10 +39,10 @@ export const SYN_CITY_CARDS: SynCityCard[] = [
     attributeKey: "plating",
     attributeCost: 1,
     name: "Deflect",
-    description: "When attacked, negate **2 damage**.",
+    description: "When attacked... negate **2 damage**.",
   },
   {
-    actionType: "condition",
+    actionType: "activate",
     actionCost: 0,
     attributeKey: "propulsion",
     attributeCost: 1,
@@ -103,7 +103,8 @@ export const SYN_CITY_CARDS: SynCityCard[] = [
     attributeKey: "power",
     attributeCost: 2,
     name: "Locked in",
-    description: "If you dealt a melee attack this turn, your following melee attacks deal **+2 damage**.",
+    description:
+      "If you dealt a melee attack this turn, your following melee attacks deal **+2 damage**.",
   },
   {
     actionType: "effect",
@@ -111,7 +112,8 @@ export const SYN_CITY_CARDS: SynCityCard[] = [
     attributeKey: "precision",
     attributeCost: 2,
     name: "Zeroed In",
-    description: "If you dealt a ranged attack this turn, your following ranged attacks deal **+2 damage**.",
+    description:
+      "If you dealt a ranged attack this turn, your following ranged attacks deal **+2 damage**.",
   },
   {
     actionType: "effect",
@@ -135,7 +137,7 @@ export const SYN_CITY_CARDS: SynCityCard[] = [
     attributeKey: "plating",
     attributeCost: 2,
     name: "Electroshock Plating",
-    description: "When attacked, deal **2 damage** back on the attacker.",
+    description: "When attacked... deal **2 damage** back on the attacker.",
   },
   {
     actionType: "effect",
@@ -144,5 +146,59 @@ export const SYN_CITY_CARDS: SynCityCard[] = [
     attributeCost: 2,
     name: "Sonic Surprise",
     description: "When you move sectors, your next attack deals **+4** damage.",
+  },
+  {
+    actionType: "activate",
+    actionCost: 1,
+    attributeKey: "power",
+    attributeCost: 8,
+    name: "Forced Relocation",
+    description:
+      "Grab and throw an enemy at **CLOSE** range into an adjacent sector of your choice. That enemy takes **8 damage**.",
+  },
+  {
+    actionType: "activate",
+    actionCost: 1,
+    attributeKey: "precision",
+    attributeCost: 8,
+    name: "Cryogenic Aim",
+    description:
+      "Until the start of your next turn, your ranged attacks deal double damage.",
+  },
+  {
+    actionType: "activate",
+    actionCost: 1,
+    attributeKey: "protocol",
+    attributeCost: 8,
+    name: "System Reboot",
+    description:
+      "Hack an enemy at **CLOSE/FAR** range. That enemy enters sleep mode until the start of your next turn.",
+  },
+  {
+    actionType: "activate",
+    actionCost: 1,
+    attributeKey: "persona",
+    attributeCost: 8,
+    name: "Recycling",
+    description:
+      "Siphon the synergy from a shutdown enemy in your sector. You and your allies start their next turn with **+1 synergy**.",
+  },
+  {
+    actionType: "condition",
+    actionCost: 1,
+    attributeKey: "plating",
+    attributeCost: 8,
+    name: "Hazmat Suit",
+    description:
+      "When attacked, negate all damage. *Discard at the start of your next turn.*",
+  },
+  {
+    actionType: "condition",
+    actionCost: 1,
+    attributeKey: "propulsion",
+    attributeCost: 8,
+    name: "Backblast",
+    description:
+      "When you move into a new sector, all enemies in it take **2 damage**. *Discard at the start of your next turn.*",
   },
 ];

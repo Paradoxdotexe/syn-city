@@ -83,15 +83,20 @@ export const Card: React.FC<CardProps> = (props) => {
         <div className="header__attribute">
           <Icon />
           <div className="attribute__name">{props.card.attributeKey}</div>
-          {props.card.attributeCost > 8 && (
+          {props.card.attributeCost >= 8 && (
             <div className="attribute__cost" style={{ background: color }} />
           )}
-          <div className="attribute__cost" style={{ background: color }}>
-            {[...new Array(8)].map((_, i) => {
-              const bit = props.card.attributeCost % 8;
-              return <div>{i < bit || bit === 0 ? "1" : "0"}</div>;
-            })}
-          </div>
+          {props.card.attributeCost >= 16 && (
+            <div className="attribute__cost" style={{ background: color }} />
+          )}
+          {props.card.attributeCost % 8 !== 0 && (
+            <div className="attribute__cost" style={{ background: color }}>
+              {[...new Array(8)].map((_, i) => {
+                const bits = props.card.attributeCost % 8;
+                return i < bits && <div>1</div>;
+              })}
+            </div>
+          )}
         </div>
       </div>
 
