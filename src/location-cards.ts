@@ -9,4 +9,12 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
     upgradeCount: 1,
     resourceCount: 1,
   },
+  {
+    name: 'Power Plant',
+    imageId: '002',
+    barriers: ['HAZARD', 'HAZARD', 'DOOR', 'DOOR', 'HAZARD'],
+    energyCount: 5,
+    upgradeCount: 0,
+    resourceCount: 0,
+  },
 ];
