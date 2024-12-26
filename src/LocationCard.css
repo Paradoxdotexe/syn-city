@@ -12,11 +12,12 @@
   .locationCard__safeZone {
     padding: 37px;
     height: 100%;
+    background: black;
 
     .safeZone__content {
       color: white;
       background: gray;
-      border-radius: 16px;
+      border-radius: 24px;
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -29,7 +30,7 @@
       }
 
       .content__covered {
-        background: rgba(0, 0, 0, 0.65);
+        background: rgba(0, 0, 0, 0.6);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -50,13 +51,13 @@
       }
 
       .content__barriers {
-        background: rgba(0, 0, 0, 0.65);
+        background: rgba(0, 0, 0, 0.6);
         padding: 24px;
         display: flex;
         flex-direction: column;
         gap: 24px;
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
 
         svg {
           font-size: 48px;
@@ -65,13 +66,13 @@
 
       .content__energy {
         display: flex;
-        font-size: 40px;
-        line-height: 130%;
+        font-size: 48px;
+        line-height: 125%;
         gap: 6px;
-        height: 48px;
+        height: 54px;
 
         svg {
-          font-size: 48px;
+          font-size: 54px;
           color: #c7ff38;
         }
       }
@@ -85,6 +86,16 @@
           width: 41px;
         }
       }
+    }
+  }
+}
+
+@media print {
+  .locationCard {
+    background: none;
+    
+    .locationCard__safeZone {
+      border-radius: 38px;
     }
   }
 }
