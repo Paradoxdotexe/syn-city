@@ -1,37 +1,32 @@
-import React from "react";
-import "./Card.css";
-import { ReactComponent as BrainIcon } from "./icons/Brain.svg";
-import { ReactComponent as ChipIcon } from "./icons/Chip.svg";
-import { ReactComponent as ShieldIcon } from "./icons/Shield.svg";
-import { ReactComponent as EyeIcon } from "./icons/Rocket.svg";
-import { ReactComponent as FistIcon } from "./icons/Fist.svg";
-import { ReactComponent as CrosshairIcon } from "./icons/Crosshair.svg";
-import { ReactComponent as ImageBorder } from "./icons/ImageBorder.svg";
-import { ReactComponent as ImageGrid } from "./icons/ImageGrid.svg";
-import { parse } from "marked";
+import React from 'react';
+import './Card.css';
+import { ReactComponent as BrainIcon } from './icons/Brain.svg';
+import { ReactComponent as ChipIcon } from './icons/Chip.svg';
+import { ReactComponent as ShieldIcon } from './icons/Shield.svg';
+import { ReactComponent as EyeIcon } from './icons/Rocket.svg';
+import { ReactComponent as FistIcon } from './icons/Fist.svg';
+import { ReactComponent as CrosshairIcon } from './icons/Crosshair.svg';
+import { ReactComponent as ImageBorder } from './icons/ImageBorder.svg';
+import { ReactComponent as ImageGrid } from './icons/ImageGrid.svg';
+import { parse } from 'marked';
 
-type CardActionType = "activate" | "condition" | "effect";
+type CardActionType = 'activate' | 'condition' | 'effect';
 
-type CardAttributeKey =
-  | "power"
-  | "precision"
-  | "protocol"
-  | "persona"
-  | "plating"
-  | "propulsion";
+type CardAttributeKey = 'power' | 'precision' | 'protocol' | 'persona' | 'plating' | 'propulsion';
 
 export type SynCityCard = {
   actionType: CardActionType;
-  actionCost: number;
+  actionCost?: number;
   attributeKey: CardAttributeKey;
   attributeCost: number;
   name: string;
   description: string;
+  visible?: boolean;
 };
 
-const KINETIC_COLOR = "#CA84FF";
-const NEURAL_COLOR = "#D4FF6F";
-const CORE_COLOR = "#3EFDD7";
+const KINETIC_COLOR = '#CA84FF';
+const NEURAL_COLOR = '#D4FF6F';
+const CORE_COLOR = '#3EFDD7';
 
 const ATTRIBUTE_COLORS: { [key in CardAttributeKey]: string } = {
   power: KINETIC_COLOR,
@@ -43,9 +38,7 @@ const ATTRIBUTE_COLORS: { [key in CardAttributeKey]: string } = {
 };
 
 const ATTRIBUTE_ICONS: {
-  [key in CardAttributeKey]: React.FunctionComponent<
-    React.SVGAttributes<SVGElement>
-  >;
+  [key in CardAttributeKey]: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 } = {
   power: FistIcon,
   precision: CrosshairIcon,
@@ -76,28 +69,35 @@ export const Card: React.FC<CardProps> = (props) => {
       <div className="card__bg bg--overlay" style={{ background: color }} />
 
       <div className="card__header">
-        <div className="header__actionCost" style={{ background: color }}>
+        <div
+          className="header__actionCost"
+          style={{
+            background: props.card.actionCost !== undefined ? color : undefined,
+          }}
+        >
           {props.card.actionCost}
         </div>
 
-        <div className="header__attribute">
-          <Icon />
-          <div className="attribute__name">{props.card.attributeKey}</div>
-          {props.card.attributeCost >= 8 && (
-            <div className="attribute__cost" style={{ background: color }} />
-          )}
-          {props.card.attributeCost >= 16 && (
-            <div className="attribute__cost" style={{ background: color }} />
-          )}
-          {props.card.attributeCost % 8 !== 0 && (
-            <div className="attribute__cost" style={{ background: color }}>
-              {[...new Array(8)].map((_, i) => {
-                const bits = props.card.attributeCost % 8;
-                return i < bits && <div>1</div>;
-              })}
-            </div>
-          )}
-        </div>
+        {!!props.card.attributeCost && (
+          <div className="header__attribute">
+            <Icon />
+            <div className="attribute__name">{props.card.attributeKey}</div>
+            {props.card.attributeCost >= 8 && (
+              <div className="attribute__cost" style={{ background: color }} />
+            )}
+            {props.card.attributeCost >= 16 && (
+              <div className="attribute__cost" style={{ background: color }} />
+            )}
+            {props.card.attributeCost % 8 !== 0 && (
+              <div className="attribute__cost" style={{ background: color }}>
+                {[...new Array(8)].map((_, i) => {
+                  const bits = props.card.attributeCost % 8;
+                  return i < bits && <div>1</div>;
+                })}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="card__image">
@@ -107,9 +107,9 @@ export const Card: React.FC<CardProps> = (props) => {
 
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <div className="card__name">{props.card.name}</div>

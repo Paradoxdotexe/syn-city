@@ -14,7 +14,7 @@ function App() {
         gap: 32,
       }}
     >
-      {SYN_CITY_CARDS.map((card) => (
+      {SYN_CITY_CARDS.slice(1).filter(card => card.visible).map((card) => (
         <Card card={card} />
       ))}
     </div>
