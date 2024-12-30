@@ -9,6 +9,7 @@ import { ReactComponent as ResourceIcon } from './icons/Resource.svg';
 import { useImage } from './util/hooks/useImage';
 import { toPng } from 'html-to-image';
 import download from 'downloadjs';
+import LocationBackImage from './images/location-back.png';
 
 type LocationBarrier = 'D' | 'E' | 'H';
 
@@ -45,6 +46,12 @@ type LocationCardProps = {
 export const LocationCard: React.FC<LocationCardProps> = (props) => {
   const elementId = `L${props.definition.id}`;
   const image = useImage(`locations/${props.definition.id}.png`);
+
+  // return (
+  //   <div className="locationCard" style={{ borderRadius: 24 }}>
+  //     <img src={LocationBackImage} style={{ margin: -76 }} />
+  //   </div>
+  // );
 
   return (
     <div

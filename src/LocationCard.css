@@ -8,6 +8,7 @@
   padding: 76px;
   cursor: pointer;
   width: fit-content;
+  overflow: hidden;
 
   .locationCard__safeZone {
     width: 673px;
@@ -48,7 +49,7 @@
         font-weight: 600;
         padding-block: 36px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.325), rgba(0, 0, 0, 0));
-        text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 12px rgba(0, 0, 0, 0.65);
       }
 
       .content__barriers {

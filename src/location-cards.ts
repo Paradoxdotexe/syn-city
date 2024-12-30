@@ -27,7 +27,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: '401',
-    name: 'Energy Storage Station',
+    name: 'Energy Station',
     barriers: ['E', 'E', 'D', 'H'],
     energyCount: 4,
     upgradeCount: 0,
@@ -35,7 +35,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: '501',
-    name: 'Nuclear Power Plant',
+    name: 'Power Plant',
     barriers: ['H', 'H', 'D', 'H', 'D'],
     energyCount: 5,
     upgradeCount: 0,
@@ -43,7 +43,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: '601',
-    name: 'Quantum Fusion Facility',
+    name: 'Fusion Facility',
     barriers: ['D', 'H', 'E', 'H', 'D', 'D'],
     energyCount: 6,
     upgradeCount: 0,
