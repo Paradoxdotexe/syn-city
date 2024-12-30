@@ -7,12 +7,14 @@ import { ReactComponent as EnergyIcon } from './icons/Energy.svg';
 import { ReactComponent as UpgradeIcon } from './icons/Upgrade.svg';
 import { ReactComponent as ResourceIcon } from './icons/Resource.svg';
 import { useImage } from './util/hooks/useImage';
+import { toPng } from 'html-to-image';
+import download from 'downloadjs';
 
-type LocationBarrier = 'DOOR' | 'ENEMY' | 'HAZARD';
+type LocationBarrier = 'D' | 'E' | 'H';
 
 export type LocationCardDefinition = {
+  id: string;
   name: string;
-  imageId: string;
   barriers: LocationBarrier[];
   energyCount: number;
   upgradeCount: number;
@@ -22,17 +24,17 @@ export type LocationCardDefinition = {
 const BARRIER_COLORS: {
   [key in LocationBarrier]: string;
 } = {
-  DOOR: '#D4FF6F',
-  ENEMY: '#CA84FF',
-  HAZARD: '#3EFDD7',
+  D: '#D4FF6F',
+  E: '#CA84FF',
+  H: '#3EFDD7',
 };
 
 const BARRIER_ICONS: {
   [key in LocationBarrier]: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 } = {
-  DOOR: LockIcon,
-  ENEMY: SkullIcon,
-  HAZARD: WarningIcon,
+  D: LockIcon,
+  E: SkullIcon,
+  H: WarningIcon,
 };
 
 type LocationCardProps = {
@@ -41,18 +43,26 @@ type LocationCardProps = {
 };
 
 export const LocationCard: React.FC<LocationCardProps> = (props) => {
-  const image = useImage(`locations/${props.definition.imageId}.png`);
+  const elementId = `L${props.definition.id}`;
+  const image = useImage(`locations/${props.definition.id}.png`);
 
   return (
-    <div className="locationCard" style={props.style}>
+    <div
+      id={elementId}
+      className="locationCard"
+      style={props.style}
+      onClick={() => {
+        toPng(document.getElementById(elementId)!, {
+          pixelRatio: 1,
+        }).then((dataUrl) => download(dataUrl, `${elementId}[face,1].png`));
+      }}
+    >
       <div className="locationCard__safeZone">
         <div
           className="safeZone__content"
-          style={
-            {
-              backgroundImage: image && `url("${image}")`,
-            }
-          }
+          style={{
+            backgroundImage: image && `url("${image}")`,
+          }}
         >
           <div className="content__uncovered">
             <div className="content__name">{props.definition.name}</div>
@@ -67,7 +77,10 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
 
           <div className="content__covered">
             <div className="content__energy">
-              {props.definition.energyCount}
+              <div className="energy__count">
+                {props.definition.energyCount}
+                <div>x</div>
+              </div>
               <EnergyIcon />
             </div>
 
@@ -76,7 +89,7 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
                 <UpgradeIcon key={i} style={{ color: '#3E8EFD' }} />
               ))}
               {[...new Array(props.definition.resourceCount)].map((_, i) => (
-                <ResourceIcon key={i} style={{ color: '#CFCFCF' }} />
+                <ResourceIcon key={i} style={{ color: '#e7e7e7' }} />
               ))}
             </div>
           </div>

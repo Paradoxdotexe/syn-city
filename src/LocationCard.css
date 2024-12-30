@@ -8,6 +8,7 @@
   z-index: 0;
   user-select: none;
   padding: 76px;
+  cursor: pointer;
 
   .locationCard__safeZone {
     padding: 37px;
@@ -66,10 +67,21 @@
 
       .content__energy {
         display: flex;
-        font-size: 48px;
-        line-height: 125%;
-        gap: 6px;
+        align-items: center;
+        gap: 4px;
         height: 54px;
+
+        .energy__count {
+          display: flex;
+          align-items: center;
+          font-size: 48px;
+          margin-top: 4px;
+          gap: 4px;
+
+          div {
+            font-size: 32px;
+          }
+        }
 
         svg {
           font-size: 54px;
@@ -93,7 +105,7 @@
 @media print {
   .locationCard {
     background: none;
-    
+
     .locationCard__safeZone {
       border-radius: 38px;
     }
