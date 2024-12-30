@@ -10,10 +10,10 @@ function App() {
   return (
     <div
       style={{
-        padding: 32,
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 32,
+        justifyContent: 'space-between',
+        gap: 64,
       }}
     >
       {/* {SYN_CITY_CARDS.slice(1).filter(card => card.visible).map((card) => (
