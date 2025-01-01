@@ -1,8 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './App.css';
-import { SYN_CITY_CARDS } from './sync-city-cards';
-import { CardHand } from './CardHand';
-import { Card } from './Card';
 import { LOCATION_CARDS } from './location-cards';
 import { LocationCard } from './LocationCard';
 
@@ -11,17 +8,19 @@ function App() {
     <div
       style={{
         display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        gap: 64,
+        flexDirection: 'column',
       }}
     >
-      {/* {SYN_CITY_CARDS.slice(1).filter(card => card.visible).map((card) => (
-        <Card card={card} />
-      ))} */}
-      {LOCATION_CARDS.map((definition, i) => (
-        <LocationCard key={i} definition={definition} />
-      ))}
+      <CardGrid>
+        {LOCATION_CARDS.filter((l) => ['201', '501', '604'].includes(l.id)).map((definition, i) => (
+          <LocationCard key={i} definition={definition} />
+        ))}
+      </CardGrid>
+      <CardGrid style={{ pageBreakBefore: 'always' }}>
+        {LOCATION_CARDS.slice(0, 3).map((definition, i) => (
+          <LocationCard key={i} definition={definition} back />
+        ))}
+      </CardGrid>
     </div>
   );
   // return (
@@ -40,3 +39,20 @@ function App() {
 }
 
 export default App;
+
+const CardGrid: React.FC<{ children: ReactNode; style?: React.CSSProperties }> = (props) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        gap: 64,
+        paddingBlock: 64,
+        ...props.style,
+      }}
+    >
+      {props.children}
+    </div>
+  );
+};

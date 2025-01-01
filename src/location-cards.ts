@@ -57,12 +57,12 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
     upgradeCount: 0,
     resourceCount: 0,
   },
-  // {
-  //   id: '604',
-  //   name: 'Underground Bunker',
-  //   barriers: ['D', 'D', 'D', 'H', 'E', 'E'],
-  //   energyCount: 2,
-  //   upgradeCount: 1,
-  //   resourceCount: 2,
-  // },
+  {
+    id: '604',
+    name: 'Underground Bunker',
+    barriers: ['E', 'H', 'D', 'D', 'D', 'H', 'D'],
+    energyCount: 2,
+    upgradeCount: 1,
+    resourceCount: 2,
+  },
 ];

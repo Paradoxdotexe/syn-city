@@ -40,6 +40,7 @@ const BARRIER_ICONS: {
 
 type LocationCardProps = {
   definition: LocationCardDefinition;
+  back?: boolean;
   style?: React.CSSProperties;
 };
 
@@ -47,11 +48,13 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
   const elementId = `L${props.definition.id}`;
   const image = useImage(`locations/${props.definition.id}.png`);
 
-  // return (
-  //   <div className="locationCard" style={{ borderRadius: 24 }}>
-  //     <img src={LocationBackImage} style={{ margin: -76 }} />
-  //   </div>
-  // );
+  if (props.back) {
+    return (
+      <div className="locationCard">
+        <img src={LocationBackImage} style={{ margin: -76 }} alt='' />
+      </div>
+    );
+  }
 
   return (
     <div

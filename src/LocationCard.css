@@ -107,6 +107,7 @@
   .locationCard {
     background: none;
     padding: 0;
+    border-radius: 38px;
 
     .locationCard__safeZone {
       border-radius: 38px;
