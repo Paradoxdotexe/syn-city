@@ -1,25 +1,22 @@
-import React, { ReactNode } from 'react';
-import './App.css';
-import { LOCATION_CARDS } from './location-cards';
-import { LocationCard } from './LocationCard';
+import React, { ReactNode } from "react";
+import "./App.css";
+import { LOCATION_CARDS } from "./location-cards";
+import { LocationCard } from "./LocationCard";
 
 function App() {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <CardGrid>
-        {LOCATION_CARDS.filter((l) => ['201', '501', '604'].includes(l.id)).map((definition, i) => (
-          <LocationCard key={i} definition={definition} />
-        ))}
-      </CardGrid>
-      <CardGrid style={{ pageBreakBefore: 'always' }}>
-        {LOCATION_CARDS.slice(0, 3).map((definition, i) => (
-          <LocationCard key={i} definition={definition} back />
-        ))}
+        {LOCATION_CARDS.filter((l) => ["201", "501", "604"].includes(l.id)).map(
+          (definition, i) => (
+            <LocationCard key={i} definition={definition} />
+          )
+        )}
       </CardGrid>
     </div>
   );
@@ -40,15 +37,15 @@ function App() {
 
 export default App;
 
-const CardGrid: React.FC<{ children: ReactNode; style?: React.CSSProperties }> = (props) => {
+const CardGrid: React.FC<{
+  children: ReactNode;
+  style?: React.CSSProperties;
+}> = (props) => {
   return (
     <div
       style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        gap: 64,
-        paddingBlock: 64,
+        display: "flex",
+        flexWrap: "wrap",
         ...props.style,
       }}
     >
