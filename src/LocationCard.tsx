@@ -67,10 +67,10 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
               backgroundImage: image && `url("${image}")`,
             }}
           >
-            <div className="content__uncovered">
-              <div className="content__name">{props.definition.name}</div>
+            <div className="content__name">{props.definition.name}</div>
 
-              <div className="content__barriers">
+            <div className="content__barriers">
+              <div className="barriers__bar">
                 {props.definition.barriers.map((barrier, i) => {
                   const BarrierIcon = BARRIER_ICONS[barrier];
                   return (
@@ -83,15 +83,15 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
               </div>
             </div>
 
-            <div className="content__covered">
-              <div className="content__energy">
+            <div className="content__rewards">
+              <div className="rewards__energy">
                 <div className="energy__count">
                   {props.definition.energyCount}
                 </div>
                 <EnergyIcon />
               </div>
 
-              <div className="content__rewards">
+              <div className="rewards__cards">
                 {[...new Array(props.definition.upgradeCount)].map((_, i) => (
                   <UpgradeIcon key={i} style={{ color: "#3E8EFD" }} />
                 ))}

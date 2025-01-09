@@ -12,7 +12,7 @@ function App() {
       }}
     >
       <CardGrid>
-        {LOCATION_CARDS.filter((l) => ["201", "501", "604"].includes(l.id)).map(
+        {LOCATION_CARDS.filter((l) => ["604"].includes(l.id)).map(
           (definition, i) => (
             <LocationCard key={i} definition={definition} />
           )
