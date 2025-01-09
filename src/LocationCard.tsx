@@ -24,9 +24,9 @@ export type LocationCardDefinition = {
 const BARRIER_COLORS: {
   [key in LocationBarrier]: string;
 } = {
-  D: "#D4FF6F",
+  D: "#3EFDD7",
   E: "#CA84FF",
-  H: "#3EFDD7",
+  H: "#f1ff6f",
 };
 
 const BARRIER_ICONS: {

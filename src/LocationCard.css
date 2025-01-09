@@ -12,8 +12,8 @@
 
   .locationCard__trimZone {
     padding: 37.5px;
-    width: 1050px;
-    height: 1650px;
+    width: 825px;
+    height: 1425px;
 
     .locationCard__safeZone {
       padding: 37.5px;
@@ -22,7 +22,7 @@
       .safeZone__content {
         color: white;
         background: gray;
-        border-radius: 25px;
+        border-radius: 20px;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -30,16 +30,16 @@
 
         .content__name {
           text-align: center;
-          font-size: 75px;
+          font-size: 60px;
           line-height: 125%;
           font-weight: 600;
-          padding: 50px;
+          padding: 40px;
           text-align: center;
           background-image: linear-gradient(
             rgba(0, 0, 0, 0.4),
             rgba(0, 0, 0, 0)
           );
-          text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
 
         .content__barriers {
@@ -50,15 +50,15 @@
 
           .barriers__bar {
             background: rgba(0, 0, 0, 0.8);
-            padding: 50px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
-            gap: 37.5px;
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px;
+            gap: 40px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
 
             svg {
-              font-size: 75px;
+              font-size: 60px;
             }
           }
         }
@@ -68,32 +68,32 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 50px;
+          padding: 40px;
 
           .rewards__energy {
             display: flex;
             align-items: center;
-            gap: 12.5px;
+            gap: 10px;
 
             .energy__count {
-              font-size: 75px;
+              font-size: 60px;
               font-weight: 600;
               margin-top: 8px;
             }
 
             svg {
-              font-size: 75px;
-              color: #c7ff38;
+              font-size: 60px;
+              color: #f5ff38;
             }
           }
 
           .rewards__cards {
             display: flex;
-            gap: 25px;
+            gap: 20px;
 
             svg {
-              font-size: 100px;
-              width: 75px;
+              font-size: 80px;
+              width: 60px;
             }
           }
         }
