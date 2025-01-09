@@ -39,7 +39,7 @@
             rgba(0, 0, 0, 0.4),
             rgba(0, 0, 0, 0)
           );
-          text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
         }
 
         .content__barriers {
@@ -49,7 +49,7 @@
           flex: 1;
 
           .barriers__bar {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.75);
             padding: 40px;
             display: flex;
             flex-direction: column;
@@ -64,7 +64,7 @@
         }
 
         .content__rewards {
-          background: rgba(0, 0, 0, 0.8);
+          background: rgba(0, 0, 0, 0.75);
           display: flex;
           align-items: center;
           justify-content: space-between;
