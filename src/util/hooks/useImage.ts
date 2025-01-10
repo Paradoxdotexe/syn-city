@@ -4,7 +4,7 @@ export const useImage = (url: string) => {
   const [image, setImage] = useState<string>();
 
   useEffect(() => {
-    import(`../../images/${url}`).then(response => setImage(response.default))
+    import(`../../images/${url}`).then((response) => setImage(response.default)).catch(() => {});
   }, [url]);
 
   return image;

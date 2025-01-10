@@ -21,7 +21,6 @@
 
       .safeZone__content {
         color: white;
-        background: gray;
         border-radius: 20px;
         display: flex;
         flex-direction: column;

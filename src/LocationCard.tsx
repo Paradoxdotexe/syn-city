@@ -93,7 +93,7 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
 
               <div className="rewards__cards">
                 {[...new Array(props.definition.upgradeCount)].map((_, i) => (
-                  <UpgradeIcon key={i} style={{ color: "#3E8EFD" }} />
+                  <UpgradeIcon key={i} style={{ color: "#4B96FF" }} />
                 ))}
                 {[...new Array(props.definition.resourceCount)].map((_, i) => (
                   <ResourceIcon key={i} style={{ color: "#e7e7e7" }} />
