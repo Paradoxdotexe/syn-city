@@ -1,37 +1,40 @@
 import React from 'react';
-import './ResourceCard.css';
+import './RewardCard.css';
 import { useImage } from './util/hooks/useImage';
 import { toPng } from 'html-to-image';
 import download from 'downloadjs';
 import DirtImage from './images/dirt.png';
 
-export type ResourceCardDefinition = {
+export type RewardCardDefinition = {
   id: string;
   name: string;
   description: string;
+  quantity: number;
 };
 
-type ResourceCardProps = {
-  definition: ResourceCardDefinition;
+type RewardCardProps = {
+  definition: RewardCardDefinition;
   style?: React.CSSProperties;
 };
 
-export const ResourceCard: React.FC<ResourceCardProps> = (props) => {
+export const RewardCard: React.FC<RewardCardProps> = (props) => {
   const elementId = `R${props.definition.id}`;
-  const image = useImage(`resources/${props.definition.id}.png`);
+  const image = useImage(`rewards/${props.definition.id}.png`);
 
   return (
     <div
       id={elementId}
-      className="resourceCard"
+      className="rewardCard"
       style={props.style}
       onClick={() => {
         toPng(document.getElementById(elementId)!, {
           pixelRatio: 1,
-        }).then((dataUrl) => download(dataUrl, `${elementId}[face,1].png`));
+        }).then((dataUrl) =>
+          download(dataUrl, `${elementId}[face,${props.definition.quantity}].png`)
+        );
       }}
     >
-      <div className="resourceCard__content">
+      <div className="rewardCard__content">
         <div
           className="content__image"
           style={{

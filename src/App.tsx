@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import './App.css';
 import { LOCATION_CARDS } from './location-cards';
 import { LocationCard } from './LocationCard';
-import { RESOURCE_CARDS } from './resource-cards';
-import { ResourceCard } from './ResourceCard';
+import { REWARD_CARDS } from './reward-cards';
+import { RewardCard } from './RewardCard';
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
             <LocationCard key={i} definition={definition} />
           )
         )} */}
-        {RESOURCE_CARDS.filter((r) => ['32'].includes(r.id)).map((definition, i) => (
-          <ResourceCard key={i} definition={definition} />
+        {REWARD_CARDS.map((definition, i) => (
+          <RewardCard key={i} definition={definition} />
         ))}
       </CardGrid>
     </div>
