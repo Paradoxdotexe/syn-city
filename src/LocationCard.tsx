@@ -85,10 +85,14 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
 
             <div className="content__rewards">
               <div className="rewards__energy">
-                <div className="energy__count">
-                  {props.definition.energyCount}
-                </div>
-                <EnergyIcon />
+                {props.definition.energyCount !== 0 && (
+                  <>
+                    <div className="energy__count">
+                      {props.definition.energyCount}
+                    </div>
+                    <EnergyIcon />
+                  </>
+                )}
               </div>
 
               <div className="rewards__cards">
