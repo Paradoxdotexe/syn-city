@@ -108,6 +108,10 @@
     overflow: hidden;
 
     .locationCard__trimZone {
+      padding: 0;
+      width: calc(825px - 75px);
+      height: calc(1425px - 75px);
+
       .locationCard__safeZone {
         .safeZone__content {
           background: white !important;

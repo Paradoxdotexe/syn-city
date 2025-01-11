@@ -51,14 +51,14 @@ function App() {
       }}
     >
       <CardGrid>
-        {LOCATION_CARDS.map(
-          (definition, i) => (
-            <LocationCard key={i} definition={definition} />
-          )
-        )}
-        {REWARD_CARDS.map((definition, i) => (
-          <RewardCard key={i} definition={definition} />
+        {LOCATION_CARDS.map((definition) => (
+          <LocationCard key={`${definition.id}`} definition={definition} />
         ))}
+        {REWARD_CARDS.map((definition) =>
+          [...new Array(definition.quantity)].map((_, i) => (
+            <RewardCard key={`${definition.id}#${i}`} definition={definition} />
+          ))
+        )}
       </CardGrid>
     </div>
   );
@@ -85,9 +85,11 @@ const CardGrid: React.FC<{
 }> = (props) => {
   return (
     <div
+      className="cardGrid"
       style={{
         display: "flex",
         flexWrap: "wrap",
+        gap: 2,
         ...props.style,
       }}
     >
