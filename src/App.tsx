@@ -6,42 +6,28 @@ import { REWARD_CARDS } from "./reward-cards";
 import { RewardCard } from "./RewardCard";
 
 function App() {
-  // helper for generating location barriers
-  // useEffect(() => {
-  //   let barriers = "D D H E E E H".split(" ");
-  //   for (let i = 0; i < 7; i++) {
-  //     console.log(barriers);
-  //     if (i % 2 === 0) {
-  //       barriers = barriers.slice(0, -1);
-  //     } else {
-  //       barriers = barriers.slice(1);
-  //     }
-  //     for (let j = 0; j < barriers.length; j++) {
-  //       if (barriers[j] === "E") {
-  //         barriers[j] = "D";
-  //       } else if (barriers[j] === "D") {
-  //         barriers[j] = "H";
-  //       } else if (barriers[j] === "H") {
-  //         barriers[j] = "E";
-  //       }
-  //     }
-  //   }
-  // }, []);
-
-  // helper to ensure barriers are well balanced
-  // useEffect(() => {
-  //   const counts = {
-  //     E: 0,
-  //     D: 0,
-  //     H: 0,
-  //   };
-  //   for (const location of LOCATION_CARDS) {
-  //     for (const barrier of location.barriers) {
-  //       counts[barrier]++;
-  //     }
-  //   }
-  //   console.log(counts);
-  // }, []);
+  // helper to count barriers and resources
+  useEffect(() => {
+    const barriers = {
+      ENEMY: 0,
+      LOCK: 0,
+      HAZARD: 0,
+    };
+    const resources = {
+      ENERGY: 0,
+      UPGRADE: 0,
+      RESOURCE: 0,
+    };
+    for (const location of LOCATION_CARDS) {
+      barriers.ENEMY += location.enemyCount;
+      barriers.LOCK += location.lockCount;
+      barriers.HAZARD += location.hazardCount;
+      resources.ENERGY += location.energyCount;
+      resources.UPGRADE += location.upgradeCount;
+      resources.RESOURCE += location.resourceCount;
+    }
+    console.log({ barriers, resources });
+  }, []);
 
   return (
     <div

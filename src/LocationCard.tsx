@@ -37,6 +37,12 @@ const BARRIER_META = {
   },
 };
 
+const LOCATION_COLOR: { [key: string]: string } = {
+  E: "#f5ff38",
+  U: "#38d1ff",
+  R: "#dbdbdb",
+};
+
 type LocationCardProps = {
   definition: LocationCardDefinition;
   style?: React.CSSProperties;
@@ -71,7 +77,11 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
                   <div className="energy__count">
                     {props.definition.energyCount}
                   </div>
-                  <EnergyBannerIcon />
+                  <EnergyBannerIcon
+                    style={{
+                      color: LOCATION_COLOR[props.definition.id[0]],
+                    }}
+                  />
                 </div>
               )}
 
@@ -84,9 +94,7 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
                 ))}
               </div>
 
-              <div className="rewards__ability">
-                {props.definition.ability}
-              </div>
+              <div className="rewards__ability">{props.definition.ability}</div>
             </div>
 
             {props.definition.name !== "Wasteland" && (
@@ -95,10 +103,12 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
                   ([key, { icon: Icon, color }]) => {
                     const count = (props.definition as any)[`${key}Count`];
                     return (
-                      <div className="barriers__barrier">
-                        <div className="barrier__count">{count}</div>
-                        <Icon key={key} style={{ color }} />
-                      </div>
+                      !!count && (
+                        <div className="barriers__barrier">
+                          <div className="barrier__count">{count}</div>
+                          <Icon key={key} style={{ color }} />
+                        </div>
+                      )
                     );
                   }
                 )}
