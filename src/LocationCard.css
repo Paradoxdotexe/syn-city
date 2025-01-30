@@ -13,7 +13,7 @@
   .locationCard__trimZone {
     padding: 37.5px;
     width: 825px;
-    height: 1425px;
+    height: 825px;
 
     .locationCard__safeZone {
       padding: 37.5px;
@@ -24,65 +24,42 @@
         border-radius: 20px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         height: 100%;
         background-size: cover;
-
-        .content__name {
-          text-align: center;
-          font-size: 60px;
-          line-height: 125%;
-          font-weight: 600;
-          padding: 40px;
-          text-align: center;
-          background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0)
-          );
-          text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
-        }
-
-        .content__barriers {
-          position: relative;
-          display: flex;
-          align-items: center;
-          flex: 1;
-
-          .barriers__bar {
-            background: rgba(0, 0, 0, 0.75);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-
-            svg {
-              font-size: 60px;
-            }
-          }
-        }
+        position: relative;
 
         .content__rewards {
-          background: rgba(0, 0, 0, 0.75);
+          width: 100%;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          padding: 40px;
+          gap: 30px;
+          padding-inline: 40px;
 
           .rewards__energy {
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            position: relative;
+            width: 100px;
 
             .energy__count {
-              font-size: 60px;
-              font-weight: 600;
-              margin-top: 8px;
+              font-size: 80px;
+              line-height: 110px;
+              height: 120px;
+              font-weight: bold;
+              color: black;
+              z-index: 1;
             }
 
             svg {
-              font-size: 60px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
               color: #f5ff38;
+              filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
             }
           }
 
@@ -90,11 +67,60 @@
             display: flex;
             gap: 20px;
 
+            &:not(:has(svg)) {
+              display: none;
+            }
+
             svg {
               font-size: 80px;
               width: 60px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
             }
           }
+
+          .rewards__ability {
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.4;
+            padding-block: 30px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+          }
+        }
+
+        .content__barriers {
+          background: rgba(0, 0, 0, 1);
+          padding: 30px 40px;
+          display: flex;
+          gap: 30px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+          .barriers__barrier {
+            display: flex;
+            gap: 10px;
+
+            .barrier__count {
+              font-size: 60px;
+              font-weight: bold;
+              height: 60px;
+              line-height: 70px;
+            }
+
+            svg {
+              font-size: 60px;
+            }
+          }
+        }
+
+        .content__name {
+          position: absolute;
+          bottom: -55px;
+          text-align: center;
+          font-size: 40px;
+          font-weight: 500;
+          text-align: center;
         }
       }
     }
@@ -106,38 +132,41 @@
     padding: 0;
     border-radius: 37.5px;
     overflow: hidden;
+    height: fit-content;
 
     .locationCard__trimZone {
-      padding: 0;
-      width: calc(825px - 75px);
-      height: calc(1425px - 75px);
+      width: calc(825px - 37.5px);
+      height: calc(825px - 37.5px);
 
       .locationCard__safeZone {
         .safeZone__content {
           background: white !important;
 
-          .content__name {
-            background: none !important;
-            text-shadow: none !important;
+          .content__rewards {
             color: black;
-          }
 
-          .content__barriers {
-            .barriers__bar {
-              background: none !important;
-
-              svg {
-                color: black !important;
+            .rewards__energy {
+              .energy__count {
+                color: white !important;
               }
             }
-          }
-
-          .content__rewards {
-            background: none !important;
-            color: black;
 
             svg {
               color: black !important;
+            }
+
+            .rewards__ability {
+              text-shadow: none !important;
+            }
+          }
+
+          .content__barriers {
+            .barriers__barrier {
+              background: none !important;
+
+              svg {
+                color: white !important;
+              }
             }
           }
         }

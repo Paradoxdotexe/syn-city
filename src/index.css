@@ -3,6 +3,8 @@ body {
   overflow-x: hidden;
   -webkit-print-color-adjust: exact !important;
   -webkit-filter: opacity(1) !important;
+  width: 2250px;
+  height: 3000px;
 }
 
 * {
@@ -11,11 +13,6 @@ body {
 }
 
 @media print {
-  body {
-    width: 2250px;
-    height: 3000px;
-  }
-
   @page {
     margin: 1in;
     size: 2250px 3000px;

@@ -54,11 +54,11 @@ function App() {
         {LOCATION_CARDS.map((definition) => (
           <LocationCard key={`${definition.id}`} definition={definition} />
         ))}
-        {REWARD_CARDS.map((definition) =>
+        {/* {REWARD_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <RewardCard key={`${definition.id}#${i}`} definition={definition} />
           ))
-        )}
+        )} */}
       </CardGrid>
     </div>
   );
@@ -89,7 +89,7 @@ const CardGrid: React.FC<{
       style={{
         display: "flex",
         flexWrap: "wrap",
-        gap: 2,
+        gap: 3,
         ...props.style,
       }}
     >

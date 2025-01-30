@@ -3,40 +3,38 @@ import "./LocationCard.css";
 import { ReactComponent as LockIcon } from "./icons/Lock.svg";
 import { ReactComponent as SkullIcon } from "./icons/Skull.svg";
 import { ReactComponent as WarningIcon } from "./icons/Warning.svg";
-import { ReactComponent as EnergyIcon } from "./icons/Energy.svg";
+import { ReactComponent as EnergyBannerIcon } from "./icons/EnergyBanner.svg";
 import { ReactComponent as UpgradeIcon } from "./icons/Upgrade.svg";
 import { ReactComponent as ResourceIcon } from "./icons/Resource.svg";
 import { useImage } from "./util/hooks/useImage";
 import { toPng } from "html-to-image";
 import download from "downloadjs";
 
-type LocationBarrier = "D" | "E" | "H";
-
 export type LocationCardDefinition = {
   id: string;
   name: string;
-  barriers: LocationBarrier[];
+  enemyCount: number;
+  lockCount: number;
+  hazardCount: number;
   energyCount: number;
   upgradeCount: number;
   resourceCount: number;
+  ability?: string;
 };
 
-const BARRIER_COLORS: {
-  [key in LocationBarrier]: string;
-} = {
-  D: "#3EFDD7",
-  E: "#CA84FF",
-  H: "#f1ff6f",
-};
-
-const BARRIER_ICONS: {
-  [key in LocationBarrier]: React.FunctionComponent<
-    React.SVGAttributes<SVGElement>
-  >;
-} = {
-  D: LockIcon,
-  E: SkullIcon,
-  H: WarningIcon,
+const BARRIER_META = {
+  enemy: {
+    icon: SkullIcon,
+    color: "#CA84FF",
+  },
+  lock: {
+    icon: LockIcon,
+    color: "#3EFDD7",
+  },
+  hazard: {
+    icon: WarningIcon,
+    color: "#f1ff6f",
+  },
 };
 
 type LocationCardProps = {
@@ -67,43 +65,47 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
               backgroundImage: image && `url("${image}")`,
             }}
           >
-            <div className="content__name">{props.definition.name}</div>
-
-            <div className="content__barriers">
-              <div className="barriers__bar">
-                {props.definition.barriers.map((barrier, i) => {
-                  const BarrierIcon = BARRIER_ICONS[barrier];
-                  return (
-                    <BarrierIcon
-                      key={i}
-                      style={{ color: BARRIER_COLORS[barrier] }}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-
             <div className="content__rewards">
-              <div className="rewards__energy">
-                {props.definition.energyCount !== 0 && (
-                  <>
-                    <div className="energy__count">
-                      {props.definition.energyCount}
-                    </div>
-                    <EnergyIcon />
-                  </>
-                )}
-              </div>
+              {!!props.definition.energyCount && (
+                <div className="rewards__energy">
+                  <div className="energy__count">
+                    {props.definition.energyCount}
+                  </div>
+                  <EnergyBannerIcon />
+                </div>
+              )}
 
               <div className="rewards__cards">
                 {[...new Array(props.definition.upgradeCount)].map((_, i) => (
-                  <UpgradeIcon key={i} style={{ color: "#4B96FF" }} />
+                  <UpgradeIcon key={i} />
                 ))}
                 {[...new Array(props.definition.resourceCount)].map((_, i) => (
-                  <ResourceIcon key={i} style={{ color: "#e7e7e7" }} />
+                  <ResourceIcon key={i} />
                 ))}
               </div>
+
+              <div className="rewards__ability">
+                {props.definition.ability}
+              </div>
             </div>
+
+            {props.definition.name !== "Wasteland" && (
+              <div className="content__barriers">
+                {Object.entries(BARRIER_META).map(
+                  ([key, { icon: Icon, color }]) => {
+                    const count = (props.definition as any)[`${key}Count`];
+                    return (
+                      <div className="barriers__barrier">
+                        <div className="barrier__count">{count}</div>
+                        <Icon key={key} style={{ color }} />
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            )}
+
+            <div className="content__name">{props.definition.name}</div>
           </div>
         </div>
       </div>
