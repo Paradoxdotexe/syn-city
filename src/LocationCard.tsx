@@ -72,7 +72,9 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
             }}
           >
             <div className="content__rewards">
-              {!!props.definition.energyCount && (
+              {(!!props.definition.energyCount ||
+                !!props.definition.upgradeCount ||
+                !!props.definition.resourceCount) && (
                 <div className="rewards__energy">
                   <div className="energy__count">
                     {props.definition.energyCount}

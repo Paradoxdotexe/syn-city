@@ -3,7 +3,7 @@ import { LocationCardDefinition } from "./LocationCard";
 export const LOCATION_CARDS: LocationCardDefinition[] = [
   {
     id: "E01",
-    name: "Unnamed",
+    name: "Solar Array",
     enemyCount: 1,
     lockCount: 3,
     hazardCount: 0,
@@ -13,7 +13,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E02",
-    name: "Unnamed",
+    name: "Wind Turbine",
     enemyCount: 2,
     lockCount: 2,
     hazardCount: 2,
@@ -23,7 +23,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E03",
-    name: "Unnamed",
+    name: "Energy Storage Depot",
     enemyCount: 1,
     lockCount: 0,
     hazardCount: 4,
@@ -33,7 +33,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E04",
-    name: "Unnamed",
+    name: "Energy Relay Station",
     enemyCount: 2,
     lockCount: 2,
     hazardCount: 3,
@@ -43,7 +43,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E05",
-    name: "Unnamed",
+    name: "Oil Refinery",
     enemyCount: 1,
     lockCount: 0,
     hazardCount: 5,
@@ -53,7 +53,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E06",
-    name: "Unnamed",
+    name: "Nuclear Reactor",
     enemyCount: 3,
     lockCount: 3,
     hazardCount: 3,
@@ -63,17 +63,17 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E07",
-    name: "Unnamed",
-    enemyCount: 6,
+    name: "Plasma Refinery",
+    enemyCount: 5,
     lockCount: 0,
-    hazardCount: 1,
+    hazardCount: 2,
     energyCount: 6,
     upgradeCount: 0,
     resourceCount: 0,
   },
   {
     id: "E08",
-    name: "Unnamed",
+    name: "Fusion Reactor",
     enemyCount: 3,
     lockCount: 4,
     hazardCount: 3,
@@ -83,9 +83,9 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E09",
-    name: "Unnamed",
-    enemyCount: 1,
-    lockCount: 7,
+    name: "Quantum Energizer",
+    enemyCount: 2,
+    lockCount: 6,
     hazardCount: 0,
     energyCount: 7,
     upgradeCount: 0,
@@ -93,7 +93,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "E10",
-    name: "Unnamed",
+    name: "Energy Storage Hub",
     enemyCount: 4,
     lockCount: 4,
     hazardCount: 4,
@@ -103,7 +103,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U01",
-    name: "Unnamed",
+    name: "Salvage Yard",
     enemyCount: 3,
     lockCount: 0,
     hazardCount: 1,
@@ -113,7 +113,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U02",
-    name: "Unnamed",
+    name: "Reclamation Facility",
     enemyCount: 2,
     lockCount: 2,
     hazardCount: 2,
@@ -123,7 +123,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U03",
-    name: "Unnamed",
+    name: "Augmentation Chamber",
     enemyCount: 0,
     lockCount: 4,
     hazardCount: 1,
@@ -133,7 +133,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U04",
-    name: "Unnamed",
+    name: "Experimental Fabricator",
     enemyCount: 2,
     lockCount: 3,
     hazardCount: 2,
@@ -143,7 +143,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U05",
-    name: "Unnamed",
+    name: "Cybernetic Repair Center",
     enemyCount: 0,
     lockCount: 5,
     hazardCount: 1,
@@ -153,7 +153,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U06",
-    name: "Unnamed",
+    name: "Prototyping Lab",
     enemyCount: 3,
     lockCount: 3,
     hazardCount: 3,
@@ -163,17 +163,17 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U07",
-    name: "Unnamed",
+    name: "Cybernetic Workshop",
     enemyCount: 0,
-    lockCount: 1,
-    hazardCount: 6,
+    lockCount: 2,
+    hazardCount: 5,
     energyCount: 0,
     upgradeCount: 2,
     resourceCount: 0,
   },
   {
     id: "U08",
-    name: "Unnamed",
+    name: "Cybernetics Lab",
     enemyCount: 4,
     lockCount: 3,
     hazardCount: 3,
@@ -183,17 +183,17 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "U09",
-    name: "Unnamed",
-    enemyCount: 7,
+    name: "Augmentation Center",
+    enemyCount: 6,
     lockCount: 0,
-    hazardCount: 1,
+    hazardCount: 2,
     energyCount: 1,
     upgradeCount: 2,
     resourceCount: 0,
   },
   {
     id: "U10",
-    name: "Unnamed",
+    name: "R&D Complex",
     enemyCount: 4,
     lockCount: 4,
     hazardCount: 4,
@@ -203,7 +203,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R01",
-    name: "Unnamed",
+    name: "Supply Cache",
     enemyCount: 0,
     lockCount: 1,
     hazardCount: 3,
@@ -213,7 +213,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R02",
-    name: "Unnamed",
+    name: "Dumping Site",
     enemyCount: 2,
     lockCount: 2,
     hazardCount: 2,
@@ -223,7 +223,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R03",
-    name: "Unnamed",
+    name: "Campground",
     enemyCount: 4,
     lockCount: 1,
     hazardCount: 0,
@@ -233,7 +233,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R04",
-    name: "Unnamed",
+    name: "Supply Store",
     enemyCount: 3,
     lockCount: 2,
     hazardCount: 2,
@@ -243,7 +243,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R05",
-    name: "Unnamed",
+    name: "Smuggler's Den",
     enemyCount: 5,
     lockCount: 1,
     hazardCount: 0,
@@ -253,7 +253,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R06",
-    name: "Unnamed",
+    name: "Warehouse",
     enemyCount: 3,
     lockCount: 3,
     hazardCount: 3,
@@ -263,9 +263,9 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R07",
-    name: "Unnamed",
-    enemyCount: 1,
-    lockCount: 6,
+    name: "Sealed Vault",
+    enemyCount: 2,
+    lockCount: 5,
     hazardCount: 0,
     energyCount: 2,
     upgradeCount: 0,
@@ -273,7 +273,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R08",
-    name: "Unnamed",
+    name: "Shopping Mall",
     enemyCount: 3,
     lockCount: 3,
     hazardCount: 4,
@@ -283,17 +283,17 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "R09",
-    name: "Unnamed",
+    name: "Underground Bunker",
     enemyCount: 0,
-    lockCount: 1,
-    hazardCount: 7,
+    lockCount: 2,
+    hazardCount: 6,
     energyCount: 1,
     upgradeCount: 0,
     resourceCount: 3,
   },
   {
     id: "R10",
-    name: "Unnamed",
+    name: "Distribution Center",
     enemyCount: 4,
     lockCount: 4,
     hazardCount: 4,
@@ -303,36 +303,36 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
   },
   {
     id: "S01",
-    name: "Unnamed",
-    enemyCount: 6,
+    name: "Black Market",
+    enemyCount: 4,
     lockCount: 3,
     hazardCount: 2,
     energyCount: 0,
     upgradeCount: 0,
     resourceCount: 0,
-    ability: 'You can defeat all enemies when you enter a new location.'
+    ability: 'During your turn, you can buy a Resource Card for 1 Function Token or an Upgrade Card for 2 Function Tokens.'
   },
   {
     id: "S02",
-    name: "Unnamed",
+    name: "Radio Station",
     enemyCount: 2,
-    lockCount: 6,
+    lockCount: 4,
     hazardCount: 3,
     energyCount: 0,
     upgradeCount: 0,
     resourceCount: 0,
-    ability: 'You can hack all doors when you enter a new location.'
+    ability: 'Once per turn, you can add a Barrier Token to any location.'
   },
   {
     id: "S03",
-    name: "Unnamed",
+    name: "Recalibration Chamber",
     enemyCount: 3,
     lockCount: 2,
-    hazardCount: 6,
+    hazardCount: 4,
     energyCount: 0,
     upgradeCount: 0,
     resourceCount: 0,
-    ability: 'You can clear all hazards when you enter a new location.'
+    ability: 'During your turn, you can covert a Function Token into a different Function Token.'
   },
   {
     id: "W01",

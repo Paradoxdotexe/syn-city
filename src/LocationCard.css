@@ -36,6 +36,7 @@
           align-items: center;
           gap: 30px;
           padding-inline: 40px;
+          min-height: 120px;
 
           .rewards__energy {
             display: flex;
@@ -145,13 +146,15 @@
             color: black;
 
             .rewards__energy {
-              .energy__count {
-                color: white !important;
+              svg {
+                filter: brightness(90%);
               }
             }
 
-            svg {
-              color: black !important;
+            .rewards__cards {
+              svg {
+                color: black !important;
+              }
             }
 
             .rewards__ability {
@@ -160,6 +163,8 @@
           }
 
           .content__barriers {
+            box-shadow: none;
+
             .barriers__barrier {
               background: none !important;
 
