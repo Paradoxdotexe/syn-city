@@ -321,7 +321,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
     energyCount: 0,
     upgradeCount: 0,
     resourceCount: 0,
-    ability: 'Once per turn, you can add a Barrier Token to any location.'
+    ability: 'Once per turn, you can add a Barrier to any location.'
   },
   {
     id: "S03",

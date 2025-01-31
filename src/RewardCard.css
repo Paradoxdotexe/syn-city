@@ -25,6 +25,7 @@
       padding-top: 0;
       background-position: center;
       background-blend-mode: darken;
+      height: 387.5px;
 
       .info__safeZone {
         display: flex;
