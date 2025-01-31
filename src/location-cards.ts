@@ -310,7 +310,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
     energyCount: 0,
     upgradeCount: 0,
     resourceCount: 0,
-    ability: 'During your turn, you can buy a Resource Card for 1 Function Token or an Upgrade Card for 2 Function Tokens.'
+    ability: 'During your turn, you can buy a Resource Card for 1 Function or an Upgrade Card for 2 Functions.'
   },
   {
     id: "S02",
@@ -332,7 +332,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
     energyCount: 0,
     upgradeCount: 0,
     resourceCount: 0,
-    ability: 'During your turn, you can covert a Function Token into a different Function Token.'
+    ability: 'During your turn, you can covert a Function into a different Function.'
   },
   {
     id: "W01",
