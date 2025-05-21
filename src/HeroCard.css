@@ -1,0 +1,65 @@
+.heroCard {
+  box-sizing: border-box;
+  font-family: 'Oxanium', sans-serif;
+  position: relative;
+  z-index: 0;
+  user-select: none;
+  cursor: pointer;
+  width: fit-content;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 37.5px;
+  width: 750px;
+  height: 1050px;
+  background: white;
+  box-shadow: inset 0 0 0 20px black;
+
+  .heroCard__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .content__top {
+      .top__safeZone {
+        padding: 40px;
+
+        .top__number {
+          font-size: 120px;
+          font-weight: bold;
+          border-radius: 75px;
+          width: 150px;
+          height: 150px;
+          background: black;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: 11px;
+        }
+      }
+    }
+
+    .content__info {
+      .info__safeZone {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 75px;
+        text-align: center;
+        color: black !important;
+
+        .info__name {
+          font-size: 60px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        .info__description {
+          font-size: 40px;
+          line-height: 140%;
+        }
+      }
+    }
+  }
+}

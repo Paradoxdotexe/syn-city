@@ -1,9 +1,11 @@
-import React, { ReactNode, useEffect } from "react";
-import "./App.css";
-import { LOCATION_CARDS } from "./location-cards";
-import { LocationCard } from "./LocationCard";
-import { REWARD_CARDS } from "./reward-cards";
-import { RewardCard } from "./RewardCard";
+import React, { ReactNode, useEffect } from 'react';
+import './App.css';
+import { LOCATION_CARDS } from './location-cards';
+import { LocationCard } from './LocationCard';
+import { REWARD_CARDS } from './reward-cards';
+import { RewardCard } from './RewardCard';
+import { HeroCard } from './HeroCard';
+import { HERO_CARDS } from './hero-cards';
 
 function App() {
   // helper to count barriers and resources
@@ -32,19 +34,24 @@ function App() {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <CardGrid>
-        {LOCATION_CARDS.map((definition) => (
+        {/* {LOCATION_CARDS.map((definition) => (
           <LocationCard key={`${definition.id}`} definition={definition} />
-        ))}
+        ))} */}
         {/* {REWARD_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <RewardCard key={`${definition.id}#${i}`} definition={definition} />
           ))
         )} */}
+        {HERO_CARDS.map((definition) =>
+          [...new Array(definition.quantity)].map((_, i) => (
+            <HeroCard key={`${definition.id}#${i}`} definition={definition} />
+          ))
+        )}
       </CardGrid>
     </div>
   );
@@ -73,8 +80,8 @@ const CardGrid: React.FC<{
     <div
       className="cardGrid"
       style={{
-        display: "flex",
-        flexWrap: "wrap",
+        display: 'flex',
+        flexWrap: 'wrap',
         gap: 3,
         ...props.style,
       }}
