@@ -5,6 +5,7 @@ import download from 'downloadjs';
 import { ReactComponent as ChipIcon } from './icons/Chip.svg';
 import { ReactComponent as BatteryIcon } from './icons/Battery.svg';
 import { ReactComponent as DataIcon } from './icons/Data.svg';
+import { ReactComponent as ShieldIcon } from './icons/Shield.svg';
 
 export type HeroCardDefinition = {
   id: string;
@@ -17,6 +18,7 @@ export type HeroCardDefinition = {
     circuitCount: number;
     dataCount: number;
     batteryCount: number;
+    plateCount: number;
   };
   activationNumber: number;
   quantity: number;
@@ -55,6 +57,9 @@ export const HeroCard: React.FC<HeroCardProps> = (props) => {
               ))}
               {[...new Array(props.definition.resources.batteryCount)].map((_, i) => (
                 <BatteryIcon key={i} style={{ fontSize: 60 }} />
+              ))}
+              {[...new Array(props.definition.resources.plateCount)].map((_, i) => (
+                <ShieldIcon key={i} style={{ fontSize: 60 }} />
               ))}
             </div>
             <div className="top__number">{props.definition.activationNumber}</div>

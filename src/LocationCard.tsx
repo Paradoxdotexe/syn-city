@@ -8,6 +8,7 @@ import { ReactComponent as DataIcon } from './icons/Data.svg';
 import { ReactComponent as LockIcon } from './icons/Lock.svg';
 import { ReactComponent as SkullIcon } from './icons/Skull.svg';
 import { ReactComponent as WarningIcon } from './icons/Warning.svg';
+import { ReactComponent as ShieldIcon } from './icons/Shield.svg';
 
 export type LocationCardDefinition = {
   id: string;
@@ -18,9 +19,10 @@ export type LocationCardDefinition = {
     hazardCount: number;
   };
   resources: {
-    batteryCount: number;
     circuitCount: number;
     dataCount: number;
+    batteryCount: number;
+    plateCount: number;
   };
   quantity: number;
 };
@@ -51,13 +53,13 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
           <div className="top__safeZone">
             <div className="top__barriers">
               {[...new Array(props.definition.barriers.enemyCount)].map((_, i) => (
-                <SkullIcon key={i} style={{ fontSize: 70 }} />
+                <SkullIcon key={i} style={{ fontSize: 60 }} />
               ))}
               {[...new Array(props.definition.barriers.lockCount)].map((_, i) => (
-                <LockIcon key={i} style={{ fontSize: 70 }} />
+                <LockIcon key={i} style={{ fontSize: 60 }} />
               ))}
               {[...new Array(props.definition.barriers.hazardCount)].map((_, i) => (
-                <WarningIcon key={i} style={{ fontSize: 70 }} />
+                <WarningIcon key={i} style={{ fontSize: 60 }} />
               ))}
             </div>
           </div>
@@ -80,6 +82,11 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
                 count={props.definition.resources.batteryCount}
                 logo={BatteryIcon}
                 color="FFFF6F"
+              />
+              <Resource
+                count={props.definition.resources.plateCount}
+                logo={ShieldIcon}
+                color="6FFF95"
               />
             </div>
           </div>
@@ -112,7 +119,7 @@ export const Resource: React.FC<ResourceProps> = (props) => {
         <div style={{ fontSize: 45, fontWeight: 'bold' }}>+</div>
         <div style={{ fontSize: 60, fontWeight: 'bold' }}>{props.count}</div>
       </div>
-      <props.logo style={{ fontSize: 60, color: props.color }} />
+      <props.logo style={{ fontSize: 60 }} />
     </div>
   );
 };

@@ -77,7 +77,7 @@ const CardGrid: React.FC<{
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 3,
+        gap: 20,
         ...props.style,
       }}
     >

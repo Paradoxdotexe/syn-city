@@ -1,7 +1,7 @@
 .cardGrid {
   page-break-after: always;
 
-  div:nth-child(6n) {
+  div:nth-child(4n) {
     page-break-after: always;
   }
 }

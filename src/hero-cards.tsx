@@ -22,6 +22,7 @@ export const HERO_CARDS: HeroCardDefinition[] = [
       circuitCount: 1,
       dataCount: 2,
       batteryCount: 3,
+      plateCount: 1,
     },
     activationNumber: 3,
     quantity: 1,
