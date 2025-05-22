@@ -2,34 +2,32 @@ import React, { ReactNode, useEffect } from 'react';
 import './App.css';
 import { LOCATION_CARDS } from './location-cards';
 import { LocationCard } from './LocationCard';
-import { REWARD_CARDS } from './reward-cards';
-import { RewardCard } from './RewardCard';
 import { HeroCard } from './HeroCard';
 import { HERO_CARDS } from './hero-cards';
 
 function App() {
   // helper to count barriers and resources
-  useEffect(() => {
-    const barriers = {
-      ENEMY: 0,
-      LOCK: 0,
-      HAZARD: 0,
-    };
-    const resources = {
-      ENERGY: 0,
-      UPGRADE: 0,
-      RESOURCE: 0,
-    };
-    for (const location of LOCATION_CARDS) {
-      barriers.ENEMY += location.enemyCount;
-      barriers.LOCK += location.lockCount;
-      barriers.HAZARD += location.hazardCount;
-      resources.ENERGY += location.energyCount;
-      resources.UPGRADE += location.upgradeCount;
-      resources.RESOURCE += location.resourceCount;
-    }
-    console.log({ barriers, resources });
-  }, []);
+  // useEffect(() => {
+  //   const barriers = {
+  //     ENEMY: 0,
+  //     LOCK: 0,
+  //     HAZARD: 0,
+  //   };
+  //   const resources = {
+  //     ENERGY: 0,
+  //     UPGRADE: 0,
+  //     RESOURCE: 0,
+  //   };
+  //   for (const location of LOCATION_CARDS) {
+  //     barriers.ENEMY += location.enemyCount;
+  //     barriers.LOCK += location.lockCount;
+  //     barriers.HAZARD += location.hazardCount;
+  //     resources.ENERGY += location.energyCount;
+  //     resources.UPGRADE += location.upgradeCount;
+  //     resources.RESOURCE += location.resourceCount;
+  //   }
+  //   console.log({ barriers, resources });
+  // }, []);
 
   return (
     <div
@@ -39,14 +37,11 @@ function App() {
       }}
     >
       <CardGrid>
-        {/* {LOCATION_CARDS.map((definition) => (
-          <LocationCard key={`${definition.id}`} definition={definition} />
-        ))} */}
-        {/* {REWARD_CARDS.map((definition) =>
+        {LOCATION_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
-            <RewardCard key={`${definition.id}#${i}`} definition={definition} />
+            <LocationCard key={`${definition.id}#${i}`} definition={definition} />
           ))
-        )} */}
+        )}
         {HERO_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <HeroCard key={`${definition.id}#${i}`} definition={definition} />

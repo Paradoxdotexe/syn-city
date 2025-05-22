@@ -1,0 +1,180 @@
+.locationCard {
+  box-sizing: border-box;
+  background: black;
+  font-family: "Oxanium", sans-serif;
+  position: relative;
+  z-index: 0;
+  user-select: none;
+  cursor: pointer;
+  width: fit-content;
+  overflow: hidden;
+  padding: 37.5px;
+
+  .locationCard__trimZone {
+    padding: 37.5px;
+    width: 825px;
+    height: 825px;
+
+    .locationCard__safeZone {
+      padding: 37.5px;
+      height: 100%;
+
+      .safeZone__content {
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        background-size: cover;
+        position: relative;
+
+        .content__rewards {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          padding-inline: 40px;
+          min-height: 120px;
+
+          .rewards__energy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100px;
+
+            .energy__count {
+              font-size: 80px;
+              line-height: 110px;
+              height: 120px;
+              font-weight: bold;
+              color: black;
+              z-index: 1;
+            }
+
+            svg {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+            }
+          }
+
+          .rewards__cards {
+            display: flex;
+            gap: 20px;
+
+            &:not(:has(svg)) {
+              display: none;
+            }
+
+            svg {
+              font-size: 80px;
+              width: 60px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            }
+          }
+
+          .rewards__ability {
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.4;
+            padding-block: 30px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+          }
+        }
+
+        .content__barriers {
+          background: rgba(0, 0, 0, 1);
+          padding: 30px 40px;
+          display: flex;
+          gap: 30px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+          .barriers__barrier {
+            display: flex;
+            gap: 10px;
+
+            .barrier__count {
+              font-size: 60px;
+              font-weight: bold;
+              height: 60px;
+              line-height: 70px;
+            }
+
+            svg {
+              font-size: 60px;
+            }
+          }
+        }
+
+        .content__name {
+          position: absolute;
+          bottom: -55px;
+          text-align: center;
+          font-size: 40px;
+          font-weight: 500;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .locationCard {
+    padding: 0;
+    border-radius: 37.5px;
+    overflow: hidden;
+    height: fit-content;
+
+    .locationCard__trimZone {
+      width: calc(825px - 37.5px);
+      height: calc(825px - 37.5px);
+
+      .locationCard__safeZone {
+        .safeZone__content {
+          background: white !important;
+
+          .content__rewards {
+            color: black;
+
+            .rewards__energy {
+              svg {
+                filter: brightness(90%);
+              }
+            }
+
+            .rewards__cards {
+              svg {
+                color: black !important;
+              }
+            }
+
+            .rewards__ability {
+              text-shadow: none !important;
+            }
+          }
+
+          .content__barriers {
+            box-shadow: none;
+
+            .barriers__barrier {
+              background: none !important;
+
+              svg {
+                color: white !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
