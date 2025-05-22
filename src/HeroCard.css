@@ -23,6 +23,15 @@
     .content__top {
       .top__safeZone {
         padding: 40px;
+        display: flex;
+        justify-content: space-between;
+
+        .top__resources {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding: 20px;
+        }
 
         .top__number {
           font-size: 120px;

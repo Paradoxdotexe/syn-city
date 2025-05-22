@@ -96,6 +96,10 @@ type ResourceProps = {
 };
 
 export const Resource: React.FC<ResourceProps> = (props) => {
+  if (!props.count) {
+    return null;
+  }
+
   return (
     <div
       style={{
