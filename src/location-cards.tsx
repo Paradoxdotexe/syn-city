@@ -13,11 +13,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 1,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L2',
     name: 'Derelict Terminal',
     barriers: {
@@ -29,11 +29,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 1,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L3',
     name: 'Vending Machine',
     barriers: {
@@ -45,11 +45,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 1,
       batteryCount: 0,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L4',
     name: 'Billboard',
     barriers: {
@@ -61,11 +61,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 1,
       batteryCount: 0,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L5',
     name: 'Wrecked Car',
     barriers: {
@@ -77,11 +77,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 1,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L6',
     name: 'Generator',
     barriers: {
@@ -93,11 +93,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 1,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L7',
     name: 'Wrecked Truck',
     barriers: {
@@ -109,11 +109,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 1,
+      gearCount: 1,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L8',
     name: 'Scrap Pile',
     barriers: {
@@ -125,11 +125,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 1,
+      gearCount: 1,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L9',
     name: 'Computer Lab',
     barriers: {
@@ -141,11 +141,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 2,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L10',
     name: 'Library',
     barriers: {
@@ -157,11 +157,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 2,
       batteryCount: 0,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L11',
     name: 'Industrial Generator',
     barriers: {
@@ -173,11 +173,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 2,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L12',
     name: 'Bus Depot',
     barriers: {
@@ -189,11 +189,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 2,
+      gearCount: 2,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L13',
     name: 'Repair Bay',
     barriers: {
@@ -205,11 +205,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 1,
       dataCount: 0,
       batteryCount: 1,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L14',
     name: 'Scrapyard',
     barriers: {
@@ -221,7 +221,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 1,
       dataCount: 0,
       batteryCount: 0,
-      plateCount: 1,
+      gearCount: 1,
     },
     quantity: 1,
   },
@@ -237,11 +237,11 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 0,
       batteryCount: 1,
-      plateCount: 1,
+      gearCount: 1,
     },
     quantity: 1,
   },
-   {
+  {
     id: 'T0L16',
     name: 'Data Bank',
     barriers: {
@@ -253,7 +253,7 @@ export const LOCATION_CARDS: LocationCardDefinition[] = [
       circuitCount: 0,
       dataCount: 1,
       batteryCount: 1,
-      plateCount: 0,
+      gearCount: 0,
     },
     quantity: 1,
   },

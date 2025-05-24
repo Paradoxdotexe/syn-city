@@ -36,18 +36,37 @@ function App() {
         flexDirection: 'column',
       }}
     >
-      <CardGrid>
+      {/* <CardGrid>
         {LOCATION_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <LocationCard key={`${definition.id}#${i}`} definition={definition} />
           ))
         )}
-        {HERO_CARDS.map((definition) =>
-          [...new Array(definition.quantity)].map((_, i) => (
-            <HeroCard key={`${definition.id}#${i}`} definition={definition} />
-          ))
-        )}
-      </CardGrid>
+      </CardGrid> */}
+      {Array.from({ length: Math.ceil(HERO_CARDS.length / 8) }).map((_, groupIdx) => {
+        const cards = HERO_CARDS.slice(groupIdx * 8, groupIdx * 8 + 8);
+        return (
+          <React.Fragment key={groupIdx}>
+            <CardGrid>
+              {cards.map((definition, i) => (
+                <HeroCard
+                  key={`${definition.id}#${i + groupIdx * 8}-front`}
+                  definition={definition}
+                />
+              ))}
+            </CardGrid>
+            <CardGrid style={{ flexDirection: 'row-reverse' }}>
+              {cards.map((definition, i) => (
+                <HeroCard
+                  key={`${definition.id}#${i + groupIdx * 8}-back`}
+                  definition={definition}
+                  flipped
+                />
+              ))}
+            </CardGrid>
+          </React.Fragment>
+        );
+      })}
     </div>
   );
   // return (
@@ -77,7 +96,6 @@ const CardGrid: React.FC<{
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 20,
         ...props.style,
       }}
     >
