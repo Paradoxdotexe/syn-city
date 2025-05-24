@@ -1,7 +1,5 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import './HeroCard.css';
-import { toPng } from 'html-to-image';
-import download from 'downloadjs';
 import { ReactComponent as ChipIcon } from './icons/Chip.svg';
 import { ReactComponent as BatteryIcon } from './icons/Battery.svg';
 import { ReactComponent as DataIcon } from './icons/Data.svg';
@@ -25,7 +23,6 @@ export type HeroCardDefinition = {
     gearCount: number;
   };
   activationNumber: number;
-  quantity: number;
 };
 
 type HeroCardProps = {
@@ -38,18 +35,7 @@ export const HeroCard: React.FC<HeroCardProps> = (props) => {
   const elementId = `R${props.definition.id}`;
 
   return (
-    <div
-      id={elementId}
-      className="heroCard"
-      style={props.style}
-      onClick={() => {
-        toPng(document.getElementById(elementId)!, {
-          pixelRatio: 1,
-        }).then((dataUrl) =>
-          download(dataUrl, `${elementId}[face,${props.definition.quantity}].png`)
-        );
-      }}
-    >
+    <div id={elementId} className="heroCard" style={props.style}>
       <div className="heroCard__content">
         <div className="content__top">
           <div className="top__safeZone">

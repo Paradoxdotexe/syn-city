@@ -1,7 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import './LocationCard.css';
-import { toPng } from 'html-to-image';
-import download from 'downloadjs';
 import { ReactComponent as ChipIcon } from './icons/Chip.svg';
 import { ReactComponent as BatteryIcon } from './icons/Battery.svg';
 import { ReactComponent as DataIcon } from './icons/Data.svg';
@@ -36,18 +34,7 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
   const elementId = `R${props.definition.id}`;
 
   return (
-    <div
-      id={elementId}
-      className="locationCard"
-      style={props.style}
-      onClick={() => {
-        toPng(document.getElementById(elementId)!, {
-          pixelRatio: 1,
-        }).then((dataUrl) =>
-          download(dataUrl, `${elementId}[face,${props.definition.quantity}].png`)
-        );
-      }}
-    >
+    <div id={elementId} className="locationCard" style={props.style}>
       <div className="locationCard__content">
         <div className="content__top">
           <div className="top__safeZone">
