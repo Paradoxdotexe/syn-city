@@ -425,8 +425,8 @@ export const HERO_CARDS: HeroCardDefinition[] = [
     "id": "29",
     "name": "Junker",
     "description": {
-      "front": "Conquer a location in the **Outer Limits**.",
-      "back": "Conquer two locations in the **Outer Limits**."
+      "front": "Scavenge a location in the **Outer Limits**.",
+      "back": "Scavenge two locations in the **Outer Limits**."
     },
     "resources": {
       "circuitCount": 0,
@@ -440,8 +440,8 @@ export const HERO_CARDS: HeroCardDefinition[] = [
     "id": "30",
     "name": "Junker",
     "description": {
-      "front": "Conquer a location in the **Outer Limits**.",
-      "back": "Conquer two locations in the **Outer Limits**."
+      "front": "Scavenge a location in the **Outer Limits**.",
+      "back": "Scavenge two locations in the **Outer Limits**."
     },
     "resources": {
       "circuitCount": 0,
@@ -455,8 +455,8 @@ export const HERO_CARDS: HeroCardDefinition[] = [
     "id": "31",
     "name": "Junker",
     "description": {
-      "front": "Conquer a location in the **Outer Limits**.",
-      "back": "Conquer two locations in the **Outer Limits**."
+      "front": "Scavenge a location in the **Outer Limits**.",
+      "back": "Scavenge two locations in the **Outer Limits**."
     },
     "resources": {
       "circuitCount": 0,
@@ -470,8 +470,8 @@ export const HERO_CARDS: HeroCardDefinition[] = [
     "id": "32",
     "name": "Junker",
     "description": {
-      "front": "Conquer a location in the **Outer Limits**.",
-      "back": "Conquer two locations in the **Outer Limits**."
+      "front": "Scavenge a location in the **Outer Limits**.",
+      "back": "Scavenge two locations in the **Outer Limits**."
     },
     "resources": {
       "circuitCount": 0,

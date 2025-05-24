@@ -7,6 +7,7 @@ import { ReactComponent as GearIcon } from './icons/Gear.svg';
 import { ReactComponent as LockIcon } from './icons/Lock.svg';
 import { ReactComponent as SkullIcon } from './icons/Skull.svg';
 import { ReactComponent as WarningIcon } from './icons/Warning.svg';
+import { ReactComponent as AtomIcon } from './icons/Atom.svg';
 
 export type LocationCardDefinition = {
   id: string;
@@ -22,6 +23,7 @@ export type LocationCardDefinition = {
     batteryCount: number;
     gearCount: number;
   };
+  quantumCoreCount: number;
   quantity: number;
 };
 
@@ -60,6 +62,9 @@ export const LocationCard: React.FC<LocationCardProps> = (props) => {
               ))}
               {[...new Array(props.definition.resources.gearCount)].map((_, i) => (
                 <GearIcon key={i} style={{ fontSize: 60 }} />
+              ))}
+              {[...new Array(props.definition.quantumCoreCount)].map((_, i) => (
+                <AtomIcon key={i} style={{ fontSize: 60 }} />
               ))}
 
               {/* <Resource

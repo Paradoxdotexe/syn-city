@@ -51,7 +51,7 @@
 
         .info__resources {
           display: flex;
-          gap: 25px;
+          gap: 20px;
           background: black;
           border-radius: 16px;
           padding: 20px 25px;

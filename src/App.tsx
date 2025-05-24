@@ -36,14 +36,14 @@ function App() {
         flexDirection: 'column',
       }}
     >
-      {/* <CardGrid>
+      <CardGrid>
         {LOCATION_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <LocationCard key={`${definition.id}#${i}`} definition={definition} />
           ))
         )}
-      </CardGrid> */}
-      {Array.from({ length: Math.ceil(HERO_CARDS.length / 8) }).map((_, groupIdx) => {
+      </CardGrid>
+      {/* {Array.from({ length: Math.ceil(HERO_CARDS.length / 8) }).map((_, groupIdx) => {
         const cards = HERO_CARDS.slice(groupIdx * 8, groupIdx * 8 + 8);
         return (
           <React.Fragment key={groupIdx}>
@@ -66,7 +66,7 @@ function App() {
             </CardGrid>
           </React.Fragment>
         );
-      })}
+      })} */}
     </div>
   );
   // return (

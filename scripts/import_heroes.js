@@ -29,7 +29,7 @@ Overload Bot	Burnout another player's uncharged syn. Burnout.	Burnout another pl
 Reactor Unit	Charge an uncharged syn.	Charge a syn.			5		1	4
 Robbie Recharge	Charge a syn.	Supercharge a syn.			6		1	5
 Energizer	Supercharge a syn.	Charge two syns.			7		1	6
-Junker	Conquer a location in the **Outer Limits**.	Conquer two locations in the **Outer Limits**.					4	1`;
+Junker	Scavenge a location in the **Outer Limits**.	Scavenge two locations in the **Outer Limits**.					4	1`;
 
 function parseHeroes(input) {
   const lines = input.trim().split('\n');
