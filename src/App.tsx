@@ -36,33 +36,20 @@ function App() {
         flexDirection: 'column',
       }}
     >
-      {/* <CardGrid>
+      <CardGrid>
         {LOCATION_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <LocationCard key={`${definition.id}#${i}`} definition={definition} />
           ))
         )}
+      </CardGrid>
+      {/* <CardGrid>
+        {HERO_CARDS.map((definition) =>
+          [...new Array(definition.quantity)].map((_, i) => (
+            <HeroCard key={`${definition.id}#${i}`} definition={definition} />
+          ))
+        )}
       </CardGrid> */}
-      {(() => {
-        // Flatten HERO_CARDS by quantity
-        const heroCards = HERO_CARDS.flatMap((definition) =>
-          Array.from({ length: definition.quantity }, () => definition)
-        );
-        // Split into chunks of 8
-        const heroCardChunks: (typeof heroCards)[] = [];
-        for (let i = 0; i < heroCards.length; i += 8) {
-          heroCardChunks.push(heroCards.slice(i, i + 8));
-        }
-        return heroCardChunks.map((cards, groupIdx) => (
-          <React.Fragment key={groupIdx}>
-            <CardGrid>
-              {cards.map((definition, i) => (
-                <HeroCard key={`${definition.id}#${groupIdx * 8 + i}`} definition={definition} />
-              ))}
-            </CardGrid>
-          </React.Fragment>
-        ));
-      })()}
     </div>
   );
   // return (

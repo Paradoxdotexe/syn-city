@@ -23,12 +23,21 @@
     .content__top {
       .top__safeZone {
         padding: 40px;
+        display: flex;
+        justify-content: space-between;
 
         .top__barriers {
           display: flex;
           flex-direction: column;
           gap: 20px;
           padding: 20px;
+        }
+
+        .top__area {
+          font-size: 35px;
+          padding: 20px;
+          font-weight: 500;
+          font-style: italic;
         }
       }
     }
