@@ -36,37 +36,33 @@ function App() {
         flexDirection: 'column',
       }}
     >
-      <CardGrid>
+      {/* <CardGrid>
         {LOCATION_CARDS.map((definition) =>
           [...new Array(definition.quantity)].map((_, i) => (
             <LocationCard key={`${definition.id}#${i}`} definition={definition} />
           ))
         )}
-      </CardGrid>
-      {/* {Array.from({ length: Math.ceil(HERO_CARDS.length / 8) }).map((_, groupIdx) => {
-        const cards = HERO_CARDS.slice(groupIdx * 8, groupIdx * 8 + 8);
-        return (
+      </CardGrid> */}
+      {(() => {
+        // Flatten HERO_CARDS by quantity
+        const heroCards = HERO_CARDS.flatMap((definition) =>
+          Array.from({ length: definition.quantity }, () => definition)
+        );
+        // Split into chunks of 8
+        const heroCardChunks: (typeof heroCards)[] = [];
+        for (let i = 0; i < heroCards.length; i += 8) {
+          heroCardChunks.push(heroCards.slice(i, i + 8));
+        }
+        return heroCardChunks.map((cards, groupIdx) => (
           <React.Fragment key={groupIdx}>
             <CardGrid>
               {cards.map((definition, i) => (
-                <HeroCard
-                  key={`${definition.id}#${i + groupIdx * 8}-front`}
-                  definition={definition}
-                />
-              ))}
-            </CardGrid>
-            <CardGrid style={{ flexDirection: 'row-reverse' }}>
-              {cards.map((definition, i) => (
-                <HeroCard
-                  key={`${definition.id}#${i + groupIdx * 8}-back`}
-                  definition={definition}
-                  flipped
-                />
+                <HeroCard key={`${definition.id}#${groupIdx * 8 + i}`} definition={definition} />
               ))}
             </CardGrid>
           </React.Fragment>
-        );
-      })} */}
+        ));
+      })()}
     </div>
   );
   // return (
